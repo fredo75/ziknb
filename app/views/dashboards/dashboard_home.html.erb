@@ -7,6 +7,17 @@
   <div class="historique"> Historique</div>
 
   <div class="instrument_en_location"> Instrument en location</div>
+   <%  @user.instruments.each do |instrument|  %>
+    <%= instrument %>
+   <% end %>
+
+
+    <div>
+     <%= link_to("create instrument", instruments_new_path, class: "btn btn-primary btn-lg active") %>
+    </div>
 
 </div>
+
+
+
 
