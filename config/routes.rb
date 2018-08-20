@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'instruments/index'
+  get 'instruments', to: 'instruments#index'
   get 'instruments/:id', to: 'instruments#show'
   get 'instruments/new'
   get 'instruments/create'
