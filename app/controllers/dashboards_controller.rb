@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
 
-  def home
+  def dashboard_home
   end
 end
