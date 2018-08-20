@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "destroy"
+Instrument.destroy_all
+puts "create"
+Instrument.create(title: "guitare", description:"super guitare des années 80" , marque:"Les Paul 1987")
+Instrument.create(title:"ukulélé", description:"petit ukulélé début de gamme pour débutant",  marque: "Kala")
+p Instrument.all
