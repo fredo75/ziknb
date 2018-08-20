@@ -1,6 +1,5 @@
 class InstrumentsController < ApplicationController
   def index
-    raise
     @instruments = Instrument.all
   end
 

@@ -9,9 +9,17 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
 <<<<<<< HEAD
+<<<<<<< HEAD
   # config.secret_key = 'a25e1bd4d9c0cea10620266032bc60f208ad67484e593e01963849b39762060d552f7279a458eb1a0a0e5afef157b82e08ea397cacc726ebbb0bdea4785846b3'
   
 =======
+  # config.secret_key = 'b892edc2b311b577068402c8a0613840bdd523c03c09269d15f2f5da4317c81b58f9f610e362daeeee29a07d648e59b8a775730dcadb30faf6944e7748af236c'
+
+>>>>>>> master
+=======
+
+  # config.secret_key = 'a25e1bd4d9c0cea10620266032bc60f208ad67484e593e01963849b39762060d552f7279a458eb1a0a0e5afef157b82e08ea397cacc726ebbb0bdea4785846b3'
+  
   # config.secret_key = 'b892edc2b311b577068402c8a0613840bdd523c03c09269d15f2f5da4317c81b58f9f610e362daeeee29a07d648e59b8a775730dcadb30faf6944e7748af236c'
 
 >>>>>>> master
@@ -24,11 +32,15 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
 <<<<<<< HEAD
+<<<<<<< HEAD
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 =======
   config.mailer_sender = 'frederic.curier@gmail.com'
 >>>>>>> master
+=======
+>>>>>>> master
 
+  config.mailer_sender = 'frederic.curier@gmail.com'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -124,9 +136,15 @@ Devise.setup do |config|
 
   # Set up a pepper to generate the hashed password.
 <<<<<<< HEAD
+<<<<<<< HEAD
   # config.pepper = 'e7d4f4cdd772451f352bb733e93c2ff6ef3e84e7bf3ffdb29867541bb71e2869ee90136bfd1a2aead2f99ecab7abd5ab9b8804062ee1d2440337646a1b452341'
 =======
   # config.pepper = '3616632472ee630fa4f895bae05628b519a182c85bde17b3b8d233590fc441d1c768907f498991af34d147ce4078787de11dace8261b22da5860bde42d44ffc2'
+>>>>>>> master
+=======
+  # config.pepper = 'e7d4f4cdd772451f352bb733e93c2ff6ef3e84e7bf3ffdb29867541bb71e2869ee90136bfd1a2aead2f99ecab7abd5ab9b8804062ee1d2440337646a1b452341'
+  # config.pepper = '3616632472ee630fa4f895bae05628b519a182c85bde17b3b8d233590fc441d1c768907f498991af34d147ce4078787de11dace8261b22da5860bde42d44ffc2'
+
 >>>>>>> master
 
   # Send a notification to the original email when the user's email is changed.
