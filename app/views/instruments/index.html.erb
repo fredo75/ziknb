@@ -1,11 +1,32 @@
-<h1>Instruments#index</h1>
+<!-- <h1>Instruments#index</h1>
 <p>Find me in app/views/instruments/index.html.erb</p>
-<%= @instruments %>
+ -->
 
-<% @instruments.each do |instrument|  %>
-<p><%= instrument.title %></p>
-<p><%= instrument.marque %></p>
-<p><%= instrument.description %></p>
-<% end %>
+POPULAR
+Le Wagon Sao Paulo
+Very cool city, the best
+
+
+<div class="container">
+  <div class="row">
+  <% @instruments.each do |instrument|  %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card">
+        <div class="card-category">
+          <p><%= instrument.title %></p>
+        </div>
+        <div class="card-description">
+          <p><%= instrument.marque %></p>
+          <p><%= instrument.description %></p>
+        </div>
+        <a class="card-link" href="#"></a>
+      </div>
+    </div>
+  <% end %>
+
+
+  <div class="footer">
+  </div>
+</div>
 
 
