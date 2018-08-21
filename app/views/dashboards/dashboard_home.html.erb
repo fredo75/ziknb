@@ -2,22 +2,17 @@
 
   <h1>Dashboard</h1>
 
-  <div class="reservation"> Reservations </div>
+  <div class="reservation"> <h2>Reservations </h2> </div>
 
-  <div class="historique"> Historique</div>
+  <div class="historique"> <h2> Historique </h2></div>
 
-  <div class="instrument_en_location"> Instrument en location</div>
-   <%  @user.instruments.each do |instrument|  %>
-    <%= instrument %>
-   <% end %>
-
+  <div class="instrument_en_location"> <h2>Instrument en location </h2> <hr>
+    <div class="display"></div>
+   <%  @instruments = @user.instruments  %>
+    <%= render 'cards_style' %>
+  </div>
 
     <div>
      <%= link_to("create instrument", new_instrument_path, class: "btn btn-primary btn-lg active") %>
     </div>
-
 </div>
-
-
-
-
