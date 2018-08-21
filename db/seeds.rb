@@ -8,6 +8,7 @@
 
 puts "Destroy"
 Instrument.destroy_all
+Location.destroy_all
 
 User.destroy_all
 puts "create User"
@@ -39,7 +40,7 @@ guitare_3.save
 guitare_4.remote_photo_url = "https://www.woodbrass.com/images/SQUARE400/woodbrass/ESP+GEV2EC2VBK+GUITARE+ELECTRIQUE.JPG"
 guitare_4.save
 
-
+Location.new(price: 200, instrument: guitare, user: bidon)
 
 
 
