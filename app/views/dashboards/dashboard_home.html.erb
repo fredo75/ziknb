@@ -9,7 +9,7 @@
   <div class="instrument_en_location"> <h2>Instrument en location </h2> <hr>
     <div class="display"></div>
    <%  @instruments = @user.instruments  %>
-      <div class="container">
+  <div class="container">
   <% @instruments.each do |instrument|  %>
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= instrument.photo %>);">
         <div class="card-description">
@@ -20,7 +20,8 @@
     </div>
           <!-- insert <div class="card"> -->
   <% end %>
-  </div>
+
+</div>
   </div>
 
     <div>
