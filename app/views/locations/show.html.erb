@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class='col-sm-6 col-sm-offset-3'>
+      <h1> Details of your location </h1>
+        <p><strong>FROM:  </strong> <%= @location.start_date %></p>
+
+        <p><strong>TO:  </strong><%= @location.end_date %></p>
+        <p><strong>Your instrument:  </strong><%= @location.instrument.title %></p>
+
+
+<%= link_to "Back to dashboard", dashboards_path %>
+</div>
+

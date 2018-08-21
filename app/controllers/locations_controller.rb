@@ -1,7 +1,4 @@
 class LocationsController < ApplicationController
-  def index
-    @locations = Location.all
-  end
 
   def show
     @location = Location.find(params[:id])
@@ -10,23 +7,25 @@ class LocationsController < ApplicationController
   def new
     @instrument = Instrument.find(params[:instrument_id])
     @location = Location.new
+
   end
 
   def create
     @instrument = Instrument.find(params[:instrument_id])
     @location = Location.new(location_params)
+    @location.user = current_user
+    @location.instrument = @instrument
     if @location.save
-      redirect_to new_location_path(@location)
+      redirect_to instrument_location_path(@instrument, @location)
     else
-      render 'index'
+      render :new
     end
   end
 
-  def destroy
-  end
-end
 
-private
-def location_params
-  params.require(:location).permit(:date)
+  private
+  def location_params
+    params.require(:location).permit(:start_date, :end_date)
+  end
+
 end

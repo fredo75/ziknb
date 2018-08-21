@@ -17,7 +17,7 @@ p User.all
 
 puts "create Instruments"
 
-Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", user: bidon)
+a = Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", user: bidon)
 Instrument.create(title: "ukulélé", description: "petit ukulélé début de gamme pour débutant",  marque: "Kala", user: bidon )
 Instrument.create(title: "guitare", description:"guitare stratocaster",  marque: "Fender",user: bidon)
 Instrument.create(title: "guitare", description:"guitare Telecaster",  marque: "Fender", user: donbi)
@@ -26,3 +26,6 @@ Instrument.create(title: "guitare classique", description:"guitare classique pro
 
 
 p Instrument.all
+
+loc = Location.create(date: 2, price: 12, delivered: true, user: bidon, instrument: a, start_date: "2018-08-22", end_date: "2018-08-24")
+p Location.all
