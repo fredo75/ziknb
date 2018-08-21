@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   resources :instruments do
     resources :locations
   end
