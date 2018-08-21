@@ -1,10 +1,12 @@
 class InstrumentsController < ApplicationController
   def index
-    @instruments = Instrument.all
+    @instruments = policy_scope(Instrument)
+    # authorize @instruments
   end
 
   def show
     @instrument = Instrument.find(params[:id])
+    authorize @instrument
   end
 
   def new
@@ -21,12 +23,19 @@ class InstrumentsController < ApplicationController
       flash.now[:error] = "Something is wrong! try again"
       render :new
     end
+    authorize @instrument
+  end
+
+  def create
+    authorize @instrument
   end
 
   def update
+    authorize @instrument
   end
 
   def edit
+    authorize @instrument
   end
 
   private
