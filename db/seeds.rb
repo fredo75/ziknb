@@ -5,9 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "destroy"
+
+puts "Destroy"
 Instrument.destroy_all
-puts "create"
-Instrument.create(title: "guitare", description:"super guitare des années 80" , marque:"Les Paul 1987")
-Instrument.create(title:"ukulélé", description:"petit ukulélé début de gamme pour débutant",  marque: "Kala")
+
+User.destroy_all
+puts "create User"
+bidon = User.create(email: "bidon@gmail.com", password: "azerty")
+donbi = User.create(email: "donbi@gmail.com", password: "azerty")
+p User.all
+
+puts "create Instruments"
+
+Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", user: bidon)
+Instrument.create(title: "ukulélé", description: "petit ukulélé début de gamme pour débutant",  marque: "Kala", user: bidon )
+Instrument.create(title: "guitare", description:"guitare stratocaster",  marque: "Fender",user: bidon)
+Instrument.create(title: "guitare", description:"guitare Telecaster",  marque: "Fender", user: donbi)
+Instrument.create(title: "guitare folk", description:"guitare acoustique",  marque: "Takamine", user: donbi)
+Instrument.create(title: "guitare classique", description:"guitare classique pro",  marque: "Takamine", user: donbi)
+
+
 p Instrument.all
