@@ -2,11 +2,14 @@
 
   <h1>Dashboard</h1>
 
-  <div class="reservation"> <h2>Reservations </h2> </div>
+  <div class="reservation"> <h2>Mes instruments loués </h2>
+    <div class="display"></div>
+    <%= render 'cards_style_loc' %>
+  </div>
 
   <div class="historique"> <h2> Historique </h2></div>
 
-  <div class="instrument_en_location"> <h2>Instrument en location </h2> <hr>
+  <div class="instrument_en_location"> <h2>Les instruments que je loue </h2> <hr>
     <div class="display"></div>
    <%  @instruments = @user.instruments  %>
       <div class="container">

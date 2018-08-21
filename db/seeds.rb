@@ -7,15 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroy"
+Location.destroy_all
+User.destroy_all
 Instrument.destroy_all
 
-User.destroy_all
+
 puts "create User"
 bidon = User.create(email: "bidon@gmail.com", password: "azerty")
 donbi = User.create(email: "donbi@gmail.com", password: "azerty")
 p User.all
 
 puts "create Instruments"
+
 
 guitare = Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", user: bidon)
 uekulele = Instrument.create(title: "ukulélé", description: "petit ukulélé début de gamme pour débutant",  marque: "Kala", user: bidon )
@@ -24,6 +27,9 @@ guitare_2 = Instrument.create(title: "guitare", description:"guitare Telecaster"
 guitare_3 = Instrument.create(title: "guitare folk", description:"guitare acoustique",  marque: "Takamine", user: donbi)
 guitare_4 = Instrument.create(title: "guitare classique", description:"guitare classique pro",  marque: "Takamine", user: donbi)
 
+
+loc = Location.new(date: 1522, price: 220, delivered: true, user: bidon, instrument: guitare)
+loc.save!
 
 
 guitare.remote_photo_url = "https://www.woodbrass.com/images/SQUARE400/woodbrass/ESP+GEV2EC2VBK+GUITARE+ELECTRIQUE.JPG"
@@ -41,8 +47,7 @@ guitare_4.save
 
 
 
-
-
 # guitare.photo = Cloudinary::Uploader.upload("san_francisco.jpg")
 # guitare.photo = "ldskmctx7mm2a1ack6ah"
 p Instrument.all
+p Location.all
