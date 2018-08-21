@@ -3,30 +3,17 @@
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
+    display: grid;
 }
 
 .card {
   height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  text-align:center;
   margin: 10px;
-}
-.card-user {
-  position: absolute;
-  right: 40px;
-  top: 40px;
-  width: 40px;
-  border-radius: 2%;
-}
-.card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
 }
 .card-description {
   position: absolute;
@@ -48,9 +35,12 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: black;
+  background: #3ab696;
   opacity: 0;
 }
 .card-link:hover {
   opacity: 0.1;
 }
+// .fa {
+//   font-size: 5px;
+// }
