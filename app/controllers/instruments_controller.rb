@@ -11,6 +11,7 @@ class InstrumentsController < ApplicationController
 
   def new
     @instrument = Instrument.new
+    authorize @instrument
   end
 
   def create
@@ -37,7 +38,7 @@ class InstrumentsController < ApplicationController
   private
 
  def instruments_params
-    params.require(:instrument).permit(:title, :description, :marque, :photo )
+    params.require(:instrument).permit(:title, :description, :marque, :photo, :category )
   end
 
 
