@@ -17,6 +17,10 @@ class InstrumentPolicy < ApplicationPolicy
   return true
   end
 
+  def index?
+    return true
+  end
+
   def update?
   record.user == user
   end
