@@ -1,11 +1,14 @@
 <div class="banner">
+  <% if user_signed_in? %>
+    <%= link_to "Rent now !", instruments_path, class: 'btn btn-success'  %>
+<% else  %>
+<%= link_to "Rent now !", new_user_registration_path, class: 'btn btn-success' %>
+  <% end %>
   <div class="banner-content">
-    <h1 style="font-family: 'Rubik', sans-serif; font-size:60px;">Zick'n'b</h1>
+    <h1>Zick'n'b</h1>
   <svg> <path style="stroke: #ffffff; stroke-width:10px; stroke-linecap: round; fill:none;" d="M10, 10, L50, 100, L90, 50"></path>
   </svg>
-    <a class="btn btn-primary btn-lg">Sign In</a>
-    <p>Rent instruments & share musical experiences</p>
-    <div>
-      <%= link_to "Sign In", new_user_session_path, class:"btn btn-primary btn-lg" %>
-      <%= link_to "Create an account", new_user_registration_path, class:"btn btn-primary btn-lg" %>
-    </div>
+    <p id="catch_phrase">Rent instruments & share musical experiences</p>
+  </div>
+
+
