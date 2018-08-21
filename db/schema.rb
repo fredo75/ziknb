@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_131109) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "photo"
     t.string "category"
     t.string "photo"
     t.index ["user_id"], name: "index_instruments_on_user_id"
