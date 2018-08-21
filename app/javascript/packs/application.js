@@ -1,7 +1,9 @@
 import "bootstrap";
 
 import {animatedWave } from '../component/banner'
-animatedWave();
+if (document.getElementById("catch_phrase")){
+  animatedWave();
+}
 
 import {hideNavbar} from '../component/banner'
 console.log(window.location);
