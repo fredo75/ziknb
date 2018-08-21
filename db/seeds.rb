@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroy"
+Location.destroy_all
+User.destroy_all
 Instrument.destroy_all
 
-User.destroy_all
 puts "create User"
 bidon = User.create(email: "bidon@gmail.com", password: "azerty")
 donbi = User.create(email: "donbi@gmail.com", password: "azerty")
@@ -17,12 +18,15 @@ p User.all
 
 puts "create Instruments"
 
-Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", user: bidon)
+a = Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", user: bidon)
 Instrument.create(title: "ukulélé", description: "petit ukulélé début de gamme pour débutant",  marque: "Kala", user: bidon )
 Instrument.create(title: "guitare", description:"guitare stratocaster",  marque: "Fender",user: bidon)
 Instrument.create(title: "guitare", description:"guitare Telecaster",  marque: "Fender", user: donbi)
 Instrument.create(title: "guitare folk", description:"guitare acoustique",  marque: "Takamine", user: donbi)
 Instrument.create(title: "guitare classique", description:"guitare classique pro",  marque: "Takamine", user: donbi)
 
+loc = Location.new(date: 1522, price: 220, delivered: true, user: bidon, instrument: a)
+loc.save!
 
 p Instrument.all
+p Location.all

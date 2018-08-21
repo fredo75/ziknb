@@ -11,6 +11,7 @@ class InstrumentsController < ApplicationController
 
   def new
     @instrument = Instrument.new
+    authorize @instrument
   end
 
   def create
@@ -23,10 +24,6 @@ class InstrumentsController < ApplicationController
       flash.now[:error] = "Something is wrong! try again"
       render :new
     end
-    authorize @instrument
-  end
-
-  def create
     authorize @instrument
   end
 
