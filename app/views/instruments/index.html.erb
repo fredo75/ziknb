@@ -2,15 +2,30 @@
 <p>Find me in app/views/instruments/index.html.erb</p>
  -->
 
-POPULAR
-Le Wagon Sao Paulo
-Very cool city, the best
-
-
 <div class="container">
+  <div class="knowledge-search-bar">
+  <div class="flex-between">
+    <h1>Search in instruments</h1>
+  </div>
+  <form class="form-inline" action="/instruments/search" accept-charset="UTF-8" method="get">
+    <div class="input-group">
+      <input value="search bar" placeholder="devise, maps, hashes" class="form-control" id="query" pattern=".*\w{3,}.*" title="Words expected" type="text" name="keyword">
+      <span class="input-group-btn">
+        <button name="button" type="submit" class="btn btn-default">
+          <i class="fas fa-search"></i>
+        </button>      </span>
+    </div>
+</form>
+</div>
   <div class="row">
   <% @instruments.each do |instrument|  %>
     <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/paris');">
+        <div class="card-description">
+        </div>
+       <!--  <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/CamilleFr"> -->
+        <a class="card-link" href="#"></a>
+      </div>
       <div class="card">
         <div class="card-category">
           <p><%= instrument.title %></p>
@@ -23,7 +38,6 @@ Very cool city, the best
       </div>
     </div>
   <% end %>
-
 
   <div class="footer">
   </div>
