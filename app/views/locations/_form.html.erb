@@ -1,0 +1,25 @@
+<%= simple_form_for([@instrument, @location]) do |l| %>
+
+  <div class="field">
+    <div class="container">
+      <div class="row">
+        <div class='col-sm-6 col-sm-offset-3'>
+          <div class="form-group">
+              <%= l.input :date %>
+            </div>
+          </div>
+        </div>
+         <div class="actions">
+          <%= l.submit  "book an instrument", class: "btn btn-primary " %>
+          <% end %>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
