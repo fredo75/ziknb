@@ -7,6 +7,7 @@ class LocationsController < ApplicationController
   def new
     @instrument = Instrument.find(params[:instrument_id])
     @location = Location.new
+    authorize @instrument
 
   end
 

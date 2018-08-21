@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroy"
+Location.destroy_all
+User.destroy_all
 Instrument.destroy_all
 
-User.destroy_all
+
 puts "create User"
 bidon = User.create(email: "bidon@gmail.com", password: "azerty")
 donbi = User.create(email: "donbi@gmail.com", password: "azerty")
@@ -17,15 +19,41 @@ p User.all
 
 puts "create Instruments"
 
-a = Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", user: bidon)
-Instrument.create(title: "ukulélé", description: "petit ukulélé début de gamme pour débutant",  marque: "Kala", user: bidon )
-Instrument.create(title: "guitare", description:"guitare stratocaster",  marque: "Fender",user: bidon)
-Instrument.create(title: "guitare", description:"guitare Telecaster",  marque: "Fender", user: donbi)
-Instrument.create(title: "guitare folk", description:"guitare acoustique",  marque: "Takamine", user: donbi)
-Instrument.create(title: "guitare classique", description:"guitare classique pro",  marque: "Takamine", user: donbi)
+
+guitare = Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", user: bidon)
+uekulele = Instrument.create(title: "ukulélé", description: "petit ukulélé début de gamme pour débutant",  marque: "Kala", user: bidon )
+guitare_1 = Instrument.create(title: "guitare", description:"guitare stratocaster",  marque: "Fender",user: bidon)
+guitare_2 = Instrument.create(title: "guitare", description:"guitare Telecaster",  marque: "Fender", user: donbi)
+guitare_3 = Instrument.create(title: "guitare folk", description:"guitare acoustique",  marque: "Takamine", user: donbi)
+guitare_4 = Instrument.create(title: "guitare classique", description:"guitare classique pro",  marque: "Takamine", user: donbi)
 
 
+loc = Location.new(date: 1522, price: 220, delivered: true, user: bidon, instrument: guitare)
+loc.save!
+
+
+guitare.remote_photo_url = "https://www.woodbrass.com/images/SQUARE400/woodbrass/ESP+GEV2EC2VBK+GUITARE+ELECTRIQUE.JPG"
+guitare.save
+uekulele.remote_photo_url = "https://www.thomann.de/pics/bdb/410343/12582286_800.jpg"
+uekulele.save
+guitare_1.remote_photo_url = "https://www.woodbrass.com/images/SQUARE400/woodbrass/ESP+GEV2EC2VBK+GUITARE+ELECTRIQUE.JPG"
+guitare_1.save
+guitare_2.remote_photo_url = "https://www.woodbrass.com/images/SQUARE400/woodbrass/ESP+GEV2EC2VBK+GUITARE+ELECTRIQUE.JPG"
+guitare_2.save
+guitare_3.remote_photo_url = "https://www.michenaud.com/upDATA/p/1500/1165/img1431960760-eZ5lkdG/zoom.jpg"
+guitare_3.save
+guitare_4.remote_photo_url = "https://www.woodbrass.com/images/SQUARE400/woodbrass/ESP+GEV2EC2VBK+GUITARE+ELECTRIQUE.JPG"
+guitare_4.save
+
+
+
+
+# guitare.photo = Cloudinary::Uploader.upload("san_francisco.jpg")
+# guitare.photo = "ldskmctx7mm2a1ack6ah"
 p Instrument.all
+<<<<<<< HEAD
 
-loc = Location.create(date: 2, price: 12, delivered: true, user: bidon, instrument: a, start_date: "2018-08-22", end_date: "2018-08-24")
+loc = Location.create(date: 2, price: 12, delivered: true, user: bidon, instrument: "guitare", start_date: "2018-08-22", end_date: "2018-08-24")
+=======
+>>>>>>> master
 p Location.all

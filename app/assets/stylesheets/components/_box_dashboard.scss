@@ -4,6 +4,7 @@
     border-style: solid;
     border-color: green;
     margin: 10px;
+    height: auto;
   }
 
   .historique {
@@ -14,8 +15,13 @@
   }
 
     .instrument_en_location {
-    height: 200px;
+    height: auto;
     border-style: solid;
     border-color: green;
     margin: 10px;
+  }
+
+  .display {
+    display: flex;
+    align-items: center;
   }
