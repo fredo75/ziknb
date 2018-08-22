@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+
   resources :instruments do
     resources :locations
   end
+
 
   devise_for :users
   root to: 'pages#home'
