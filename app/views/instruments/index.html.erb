@@ -29,8 +29,9 @@
           <div class="card-description">
             <h2><%= instrument.title %></h2>
             <p><%= instrument.marque %></p>
+            <%= link_to "See ", instrument_path(instrument) %>
           </div>
-        <%= link_to instrument_path(instrument), class:"card-link"%>
+
       </div>
     <% end %>
 

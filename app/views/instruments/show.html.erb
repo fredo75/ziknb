@@ -1,27 +1,37 @@
-
-
 <div style="margin:10px" class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-      <%= image_tag 'guitare_folk.jpg', :class => "card card-user card-category card-description"%>
 
-    </div>
-    <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
-        <h1><%= @instrument.title %></h1>
-        <p><%= @instrument.description %></p>
-        <p><%= @instrument.marque %></p>
-    </div>
+
+
+            <%= image_tag 'guitare_folk.jpg', :class => "card card-user card-category card-description"%>
+
+
+
+
+
+      <div class="col-xs-12 col-sm-4">
+        <!-- insert <div class="card"> -->
+          <h1><%= @instrument.title %></h1>
+          <p><%= @instrument.description %></p>
+          <p><%= @instrument.marque %></p>
+      </div>
+
+
+    <div>
        <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
-        <h1><%= Date.today %></h1>
-        <p>To do Calendrier (Cf simple calendar Gem)</p>
+        <h1> Availability </h1>
+        <p>To do Calendrier </p>
         <p>Réservation </p>
+      </div>
     </div>
   </div>
 </div>
-<div class="btn btn-primary">
-  <p> <%= link_to 'book', new_instrument_location_path(@instrument.id) %></p>
-</div>
+
+
+
+ <%=link_to 'book', new_instrument_location_path(@instrument.id), class:"btn-medium" %>
+
+
 
