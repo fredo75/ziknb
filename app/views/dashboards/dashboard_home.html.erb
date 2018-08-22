@@ -1,16 +1,36 @@
 <div class="container">
 
-  <h1>Dashboard</h1>
 
-  <div class="reservation"> <h2>Mes instruments loués </h2>
+  <div class="reservation"> <h2>instru pour moi </h2>
+    <div class = "button">
+     <%= link_to("create instrument", new_instrument_path, class: "btn btn-primary btn-lg active") %>
+    </div>
     <div class="display"></div>
     <%= render 'cards_style_loc' %>
   </div>
 
   <div class="historique"> <h2> Historique </h2></div>
+  <%= @locations.title %>
 
-  <div class="instrument_en_location"> <h2>Les instruments que je loue </h2> <hr>
-    <div class="display"></div>
+  <div class="instrument_en_location"> <h2>Instruments pour les autres </h2> <hr>
+    <div class="message">
+      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+        <h3>Gab Dehan</h3>
+        <p>10/07/17</p>
+    </div>
+  <div class="message-body">
+    <p><strong>I am not sure yet!</strong></p>
+    <p>
+      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+    </p>
+  </div>
+  <div class="message-status">
+    <p class="status pending">Pending</p>
+    <p class="price">€345</p>
+  </div>
+</div>
+    <!-- <div class="display"></div>
    <%  @instruments = @user.instruments  %>
   <div class="container">
   <% @instruments.each do |instrument|  %>
@@ -21,12 +41,9 @@
         </div>
       <a class="card-link" href="#" ></a>
     </div>
-  <% end %>
+  <% end %> -->
 
 </div>
   </div>
 
-    <div>
-     <%= link_to("create instrument", new_instrument_path, class: "btn btn-primary btn-lg active") %>
-    </div>
 </div>
