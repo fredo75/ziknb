@@ -32,6 +32,7 @@ loc = Location.new(date: 1522, price: 220, delivered: true, user: bidon, instrum
 loc.save!
 
 
+
 guitare.remote_photo_url = "https://www.woodbrass.com/images/SQUARE400/woodbrass/ESP+GEV2EC2VBK+GUITARE+ELECTRIQUE.JPG"
 guitare.save
 uekulele.remote_photo_url = "https://www.thomann.de/pics/bdb/410343/12582286_800.jpg"
@@ -51,9 +52,10 @@ guitare_4.save
 # guitare.photo = Cloudinary::Uploader.upload("san_francisco.jpg")
 # guitare.photo = "ldskmctx7mm2a1ack6ah"
 p Instrument.all
-<<<<<<< HEAD
 
-loc = Location.create(date: 2, price: 12, delivered: true, user: bidon, instrument: "guitare", start_date: "2018-08-22", end_date: "2018-08-24")
-=======
->>>>>>> master
+
+
+loc = Location.create(date: 2, price: 12, delivered: true, user: bidon, instrument: guitare, start_date: "2018-08-22", end_date: "2018-08-24")
+
+
 p Location.all
