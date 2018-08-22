@@ -1,11 +1,9 @@
-<div style="margin:10px" class="container">
+<div class="container container-instrument" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('<%= image_path "duotone.png" %>');">
   <div class="row">
+    <p id="photo">
 
-      <!-- insert <div class="card"> -->
-
-
-            <%= image_tag 'guitare_folk.jpg', :class => "card card-user card-category card-description"%>
-
+    <%= image_tag 'guitare_folk.jpg', :class => "card card-user card-category card-description"%>
+    </p>
 
 
 
@@ -19,19 +17,29 @@
 
 
     <div>
+      <div class="row">
        <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
-        <h1> Availability </h1>
-        <p>To do Calendrier </p>
-        <p>Réservation </p>
-      </div>
+         <h1> Availability </h1>
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+        <p>Bookings </p>
+
+        </div>
+        </div>
     </div>
   </div>
+   <div class="row">
+  <p><%=link_to 'book', new_instrument_location_path(@instrument.id), class:"btn btn-success" %></p>
+</div>
+
 </div>
 
 
 
- <%=link_to 'book', new_instrument_location_path(@instrument.id), class:"btn-medium" %>
 
 
 
