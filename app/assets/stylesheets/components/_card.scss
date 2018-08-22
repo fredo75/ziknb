@@ -17,7 +17,7 @@
   left: 2px;
 }
 .card-description h2 {
-  font-size: 24px;
+  font-size: 18px;
 }
 .card-description p {
   font-size: 14px;
@@ -42,5 +42,8 @@
 // }
 .delete-link {
   position: relative;
+  top:2px;
+  left:150px;
   z-index: 3;
+  font-color:white;
 }
