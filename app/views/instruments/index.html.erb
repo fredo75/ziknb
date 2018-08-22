@@ -18,6 +18,8 @@
   </div>
 
   <div class="container">
+    <% if @instruments.nil? %>
+    <% else %>
     <% @instruments.each do |instrument|  %>
       <% if instrument.photo.nil? %>
         <div class="card">
@@ -33,5 +35,5 @@
     <% end %>
 
   </div>
-  <!-- insert <div class="card"> -->
+    <% end %><!-- insert <div class="card"> -->
 </div>
