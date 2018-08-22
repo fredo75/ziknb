@@ -1,22 +1,7 @@
 
 <div class="container-dashboard">
-  <div class="reservation" > <h2 style="margin-left: 30px;"> Reservations </h2>
-  <% @locations.each do |location| %>
-  <div class="message">
-    <p class="price"> <%= @user.email %>/ </p>
-    <p class="instru_title"> <%= location.instrument.title %> </p>
-    <p class="date"><%= location.start_date %> - <%= location.end_date %> </p>
-   <!--  <p class="status pending"> --Pending  </p> -->
-  </div>
-  </div>
-  <%end %>
-
-  <div class="historique"> <h2 style="margin-left: 30px;"> History</h2>
-  </div>
-
-
-<div class="instrument_en_location">
-  <div class="instrument_en_location"> <h2 style="margin-left: 30px;">My instruments</h2> <hr>
+  <div class="instrument_en_location">
+    <h2 style="margin-left: 30px;">My instruments</h2> <hr>
     <div class = "button" style="margin-left: 30px;">
      <%= link_to("create instrument", new_instrument_path, class: "btn btn-success") %>
     </div>
@@ -26,13 +11,32 @@
            <i class='fas fa-trash-alt'></i>
           <% end %>
         <div class="card-description">
-        </div>
           <h2><%= instrument.title %></h2>
           <p><%= instrument.marque %></p>
+        </div>
       <%= link_to '', instrument_path(instrument.id), class: "card-link" %>
     </div>
   <% end %>
   </div>
+
+  <div class="colonne-droite">
+
+    <div class="reservation" > <h2 style="margin-left: 30px;"> Reservations </h2>
+    <% @locations.each do |location| %>
+      <div class="message">
+        <p class="price"> <%= @user.email %>/ </p>
+        <p class="instru_title"> <%= location.instrument.title %> </p>
+        <p class="date"><%= location.start_date %> - <%= location.end_date %> </p>
+     <!--  <p class="status pending"> --Pending  </p> -->
+      </div>
+    <%end %>
+    </div>
+
+
+    <div class="historique"> <h2 style="margin-left: 30px;"> History</h2>
+    </div>
+  </div>
+
 </div>
 
 

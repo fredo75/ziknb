@@ -1,38 +1,37 @@
 .container-dashboard {
   background-image:  linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('duotone.png');
-    display:grid;
-    grid-template-columns : 30vw 60vw;
-    grid-template-rows: 60vh 30vh;
+    display:flex;
     opacity:0.9;
   }
   .reservation {
     background:white;
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
     margin: 10px;
 
   }
 
+.colonne-droite {
+  display: flex;
+  flex-direction: column;
+  flex-grow:2;
+
+}
+
+
   .historique {
     background:white;
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
     margin: 10px;
   }
 
     .instrument_en_location {
     background:white;
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 2;
     height: auto;
+    width: 350px;
     margin: 10px;
   }
 
     .btn {
 
       margin-bottom: 5vh;
-      grid-column: 1 / span 1;
-      grid-row: 1 / span 1;
     }
 
     .message {
