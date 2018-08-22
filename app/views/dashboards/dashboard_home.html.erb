@@ -9,22 +9,26 @@
 
   <div class="historique"> <h2> Historique </h2></div>
 
-  <div class="instrument_en_location"> <h2>Les instruments que je loue </h2> <hr>
-    <div class="display"></div>
-   <%  @instruments = @user.instruments  %>
+<div class="instrument_en_location">
+  <h2>Les instruments que je loue </h2><hr>
+
   <div class="container">
   <% @instruments.each do |instrument|  %>
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= instrument.photo %>);">
         <div class="card-description">
           <h2><%= instrument.title %></h2>
           <p><%= instrument.marque %></p>
+
+          <%= link_to instrument_path(instrument.id), method: :delete, :class => 'delete-link' do %>
+           <i class='fas fa-trash-alt'></i>
+          <% end %>
+
         </div>
-      <a class="card-link" href="#" ></a>
+      <%= link_to '', instrument_path(instrument.id), class: "card-link" %>
     </div>
   <% end %>
-
-</div>
   </div>
+</div>
 
     <div>
      <%= link_to("create instrument", new_instrument_path, class: "btn btn-primary btn-lg active") %>
