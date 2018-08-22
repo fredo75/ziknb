@@ -2,6 +2,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+    authorize @location
 
   end
 
@@ -9,14 +10,13 @@ class LocationsController < ApplicationController
     @instrument = Instrument.find(params[:instrument_id])
     @location = Location.new
     authorize @location
-
-
   end
 
   def create
     @instrument = Instrument.find(params[:instrument_id])
     @location = Location.new(location_params)
     @location.user = current_user
+    authorize @location
     @location.instrument = @instrument
     authorize @location
     if @location.save
