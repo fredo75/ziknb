@@ -1,7 +1,1 @@
-<h1>LocationsController#new</h1>
-<p>Find me in app/views/locations_controller/new.html.erb</p>
-
-<%= simple_form_for([@instrument, @location]) do |f| %>
-  <%= f.input :date%>
-  <%= f.submit "book an instrument", class: "btn btn-primary" %>
-<% end %>
+<%= render 'form', location: @location %>
