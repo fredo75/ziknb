@@ -1,13 +1,6 @@
-.container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    display: grid;
-}
-
 .card {
-  height: 175px;
+  height: 15vh;
+  width: auto;
   background-repeat: no-repeat;
   background-position:right;
   color: white;
@@ -17,8 +10,11 @@
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  text-align:right;
+  height: 10vh;
+  width: 200px;
+  bottom: 1px;
+  left: 2px;
 }
 .card-description h2 {
   font-size: 24px;
@@ -35,7 +31,7 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: #3ab696;
+  background: #ffffff;
   opacity: 0;
 }
 .card-link:hover {
