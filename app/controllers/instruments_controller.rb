@@ -1,7 +1,15 @@
 class InstrumentsController < ApplicationController
   def index
     @instruments = policy_scope(Instrument)
+    @instruments = Instrument.where.not(latitude: nil, longitude: nil)
+    @markers = @instruments.map do |instrument|
+      {
+        lat: instrument.latitude,
+        lng: instrument.longitude
 
+        # infoWindow: { content: render_to_string(partial: "/instruments/map_box", locals: { flat: flat }) }
+      }
+    end
      if params[:query].present?
       @instruments = Instrument.where(title: params[:query])
     else
