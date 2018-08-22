@@ -1,31 +1,37 @@
 class InstrumentsController < ApplicationController
   def index
     @instruments = policy_scope(Instrument)
-    @markers = @instruments.map do |instrument|
-      {
-        lat: instrument.latitude,
-        lng: instrument.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/instruments/map_box", locals: { flat: flat }) }
-      }
-    end
+
      if params[:query].present?
       @instruments = Instrument.where(title: params[:query])
     else
       @instruments = Instrument.all
     end
      authorize @instruments
-     @instruments = Instrument.where.not(latitude: nil, longitude: nil)
   end
 
   def show
     @instrument = Instrument.find(params[:id])
     authorize @instrument
+
+
   end
 
   def new
     @instrument = Instrument.new
     authorize @instrument
+    @instruments = Instrument.where.not(latitude: nil, longitude: nil)
+    @markers = @instruments.map do |instrument|
+      {
+        lat: instrument.latitude,
+        lng: instrument.longitude
+
+        # infoWindow: { content: render_to_string(partial: "/instruments/map_box", locals: { flat: flat }) }
+      }
+    end
+
   end
+
 
   def create
     @instrument = Instrument.new(instruments_params)
