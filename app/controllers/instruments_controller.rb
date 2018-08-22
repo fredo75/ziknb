@@ -7,6 +7,7 @@ class InstrumentsController < ApplicationController
         lng: instrument.longitude#,
         # infoWindow: { content: render_to_string(partial: "/instruments/map_box", locals: { flat: flat }) }
       }
+    end
      if params[:query].present?
       @instruments = Instrument.where(title: params[:query])
     else
@@ -14,8 +15,6 @@ class InstrumentsController < ApplicationController
     end
      authorize @instruments
      @instruments = Instrument.where.not(latitude: nil, longitude: nil)
-
-
   end
 
   def show
@@ -63,7 +62,7 @@ class InstrumentsController < ApplicationController
 
   private
 
- def instruments_params
+  def instruments_params
     params.require(:instrument).permit(:title, :description, :marque, :photo, :category, :address, :latitude, :longitude )
   end
 
