@@ -19,7 +19,11 @@
 
   <div class="container">
     <% @instruments.each do |instrument|  %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path instrument.photo %>');">
+      <% if instrument.photo.nil? %>
+        <div class="card">
+      <% else %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path instrument.photo %>');">
+      <% end  %>
           <div class="card-description">
             <h2><%= instrument.title %></h2>
             <p><%= instrument.marque %></p>
