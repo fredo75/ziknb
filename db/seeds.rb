@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroy"
+Location.destroy_all
+User.destroy_all
 Instrument.destroy_all
 
-User.destroy_all
+
 puts "create User"
 bidon = User.create(email: "bidon@gmail.com", password: "azerty")
 donbi = User.create(email: "donbi@gmail.com", password: "azerty")
@@ -25,6 +27,9 @@ guitare_2 = Instrument.create(title: "guitare", description:"guitare Telecaster"
 guitare_3 = Instrument.create(title: "guitare folk", description:"guitare acoustique",  marque: "Takamine", user: donbi)
 guitare_4 = Instrument.create(title: "guitare classique", description:"guitare classique pro",  marque: "Takamine", user: donbi)
 
+
+loc = Location.new(date: 1522, price: 220, delivered: true, user: bidon, instrument: guitare)
+loc.save!
 
 
 
@@ -43,11 +48,11 @@ guitare_4.save
 
 
 
-
-
 # guitare.photo = Cloudinary::Uploader.upload("san_francisco.jpg")
 # guitare.photo = "ldskmctx7mm2a1ack6ah"
 p Instrument.all
 
+
 loc = Location.create(date: 2, price: 12, delivered: true, user: bidon, instrument: guitare, start_date: "2018-08-22", end_date: "2018-08-24")
+
 p Location.all
