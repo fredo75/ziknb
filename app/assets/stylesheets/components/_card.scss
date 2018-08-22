@@ -1,5 +1,4 @@
 .card {
-  height: 15vh;
   width: auto;
   background-repeat: no-repeat;
   background-position:right;
@@ -9,12 +8,9 @@
   margin: 10px;
 }
 .card-description {
-  position: absolute;
   text-align:right;
-  height: 10vh;
   width: 200px;
-  bottom: 1px;
-  left: 2px;
+  padding: 1em;
 }
 .card-description h2 {
   font-size: 24px;
