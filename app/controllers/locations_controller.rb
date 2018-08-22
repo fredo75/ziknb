@@ -2,12 +2,13 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+
   end
 
   def new
     @instrument = Instrument.find(params[:instrument_id])
     @location = Location.new
-    authorize @instrument
+
 
   end
 
@@ -21,6 +22,7 @@ class LocationsController < ApplicationController
     else
       render :new
     end
+
   end
 
 
