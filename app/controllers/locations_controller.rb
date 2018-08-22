@@ -10,9 +10,6 @@ class LocationsController < ApplicationController
     @instrument = Instrument.find(params[:instrument_id])
     @location = Location.new
     authorize @location
-
-
-
   end
 
   def create
@@ -21,6 +18,7 @@ class LocationsController < ApplicationController
     @location.user = current_user
     authorize @location
     @location.instrument = @instrument
+    authorize @location
     if @location.save
       redirect_to instrument_location_path(@instrument, @location)
     else
