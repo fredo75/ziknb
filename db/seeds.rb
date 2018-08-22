@@ -48,11 +48,14 @@ guitare_4.save
 
 
 
+
 # guitare.photo = Cloudinary::Uploader.upload("san_francisco.jpg")
 # guitare.photo = "ldskmctx7mm2a1ack6ah"
 p Instrument.all
 
 
+
 loc = Location.create(date: 2, price: 12, delivered: true, user: bidon, instrument: guitare, start_date: "2018-08-22", end_date: "2018-08-24")
+
 
 p Location.all
