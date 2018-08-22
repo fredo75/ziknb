@@ -21,14 +21,20 @@
 
   <div class="colonne-droite">
 
-    <div class="reservation" > <h2 style="margin-left: 30px;"> Reservations </h2>
+    <div class="reservation" > <h2 style="margin-left: 30px;"> My bookings </h2>
     <% @locations.each do |location| %>
-      <div class="message">
-        <p class="price"> <%= @user.email %>/ </p>
-        <p class="instru_title"> <%= location.instrument.title %> </p>
-        <p class="date"><%= location.start_date %> - <%= location.end_date %> </p>
-     <!--  <p class="status pending"> --Pending  </p> -->
+
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= location.instrument.photo %>); backround-size:cover;">
+
+          <div class="card-description">
+            <h2><%= location.instrument.title %></h2>
+            <p><%= location.instrument.marque %></p>
+            <h2>rent start: <%= location.start_date %></h2>
+            <h2> rent end: <%= location.end_date %> </h2>
+          </div>
+        <%= link_to '', instrument_path(location.instrument.id), class: "card-link" %>
       </div>
+
     <%end %>
     </div>
 
