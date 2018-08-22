@@ -1,46 +1,36 @@
-<div class="container">
-  <div class="reservation"> <h2>instru pour moi </h2>
-    <div class = "button">
-     <%= link_to("create instrument", new_instrument_path, class: "btn btn-primary btn-lg active") %>
-    </div>
-    <div class="display"></div>
-    <%= render 'cards_style_loc' %>
+
+<div class="container-dashboard">
+  <div class="reservation" > <h2 style="margin-left: 30px;"> Reservations </h2>
+  <% @locations.each do |location| %>
+  <div class="message">
+    <p class="price"> <%= @user.email %>/ </p>
+    <p class="instru_title"> <%= location.instrument.title %> </p>
+    <p class="date"><%= location.start_date %> - <%= location.end_date %> </p>
+   <!--  <p class="status pending"> --Pending  </p> -->
+  </div>
+  </div>
+  <%end %>
+
+  <div class="historique"> <h2 style="margin-left: 30px;"> History</h2>
   </div>
 
-  <div class="historique"> <h2> Historique </h2></div>
-  <%= @locations.title %>
-
-  <div class="instrument_en_location"> <h2>Instruments pour les autres </h2> <hr>
-    <div class="message">
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-        <div class="message-name">
-        <h3>Gab Dehan</h3>
-        <p>10/07/17</p>
+  <div class="instrument_en_location"> <h2 style="margin-left: 30px;">My instruments</h2> <hr>
+    <div class = "button" style="margin-left: 30px;">
+     <%= link_to("create instrument", new_instrument_path, class: "btn btn-success") %>
     </div>
-  <div class="message-body">
-    <p><strong>I am not sure yet!</strong></p>
-    <p>
-      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
-    </p>
-  </div>
-  <div class="message-status">
-    <p class="status pending">Pending</p>
-    <p class="price">€345</p>
-  </div>
-</div>
-    <!-- <div class="display"></div>
-   <%  @instruments = @user.instruments  %>
-  <div class="container">
+    <%  @instruments = @user.instruments  %>
   <% @instruments.each do |instrument|  %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= instrument.photo %>);">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= instrument.photo %>); backround-size:cover;">
         <div class="card-description">
           <h2><%= instrument.title %></h2>
           <p><%= instrument.marque %></p>
         </div>
       <a class="card-link" href="#" ></a>
     </div>
-  <% end %> -->
-
-</div>
+  <% end %>
   </div>
 </div>
+
+
+</div>
+
