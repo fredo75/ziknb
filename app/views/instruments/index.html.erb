@@ -28,9 +28,10 @@
             <h2><%= instrument.title %></h2>
             <p><%= instrument.marque %></p>
           </div>
-        <a class="card-link" href="#" ></a>
+        <%= link_to instrument_path(instrument), class:"card-link"%>
       </div>
     <% end %>
+
   </div>
   <!-- insert <div class="card"> -->
 </div>
