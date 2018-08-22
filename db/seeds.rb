@@ -20,12 +20,12 @@ p User.all
 puts "create Instruments"
 
 
-guitare = Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", user: bidon)
-uekulele = Instrument.create(title: "ukulélé", description: "petit ukulélé début de gamme pour débutant",  marque: "Kala", user: bidon )
-guitare_1 = Instrument.create(title: "guitare", description:"guitare stratocaster",  marque: "Fender",user: bidon)
-guitare_2 = Instrument.create(title: "guitare", description:"guitare Telecaster",  marque: "Fender", user: donbi)
-guitare_3 = Instrument.create(title: "guitare folk", description:"guitare acoustique",  marque: "Takamine", user: donbi)
-guitare_4 = Instrument.create(title: "guitare classique", description:"guitare classique pro",  marque: "Takamine", user: donbi)
+guitare = Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", address: "20 avenue de belleville, paris", user: bidon)
+uekulele = Instrument.create(title: "ukulélé", description: "petit ukulélé début de gamme pour débutant", address: "20 avenue des champs elysees, paris",  marque: "Kala", user: bidon )
+guitare_1 = Instrument.create(title: "guitare", description:"guitare stratocaster",  marque: "Fender", address: "10 rue oberkampf, paris", user: bidon)
+guitare_2 = Instrument.create(title: "guitare", description:"guitare Telecaster",  marque: "Fender", address: "15 villa gaudelet, paris",  user: donbi)
+guitare_3 = Instrument.create(title: "guitare folk", description:"guitare acoustique",  marque: "Takamine", address: "20 avenue de menillmontant, paris", user: donbi)
+guitare_4 = Instrument.create(title: "guitare classique", description:"guitare classique pro",  marque: "Takamine", address: "20 rue verte, paris", user: donbi)
 
 
 loc = Location.new(date: 1522, price: 220, delivered: true, user: bidon, instrument: guitare)
