@@ -6,7 +6,7 @@ class InstrumentPolicy < ApplicationPolicy
   end
 
   def create?
-  record.user == user
+    record.user == user
   end
 
   def show?
@@ -14,7 +14,7 @@ class InstrumentPolicy < ApplicationPolicy
   end
 
   def new?
-  return true
+    return true
   end
 
   def index?
@@ -22,10 +22,16 @@ class InstrumentPolicy < ApplicationPolicy
   end
 
   def update?
-  record.user == user
+    record.user == user
   end
 
   def edit?
-  record.user == user
+    record.user == user
   end
+
+
+  def destroy?
+    record.user == user
+  end
+
 end

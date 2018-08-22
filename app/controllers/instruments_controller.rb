@@ -40,6 +40,18 @@ class InstrumentsController < ApplicationController
     authorize @instrument
   end
 
+  def destroy
+    @instrument = Instrument.find(params[:id])
+    authorize @instrument
+    if @instrument.locations.empty?
+      @instrument.destroy
+      flash[:notice] = 'Instrument successfully destroyed'
+    else
+      flash[:alert] = 'This instrument has locations'
+    end
+    redirect_to dashboards_path
+  end
+
   private
 
  def instruments_params

@@ -18,15 +18,23 @@
   </div>
 
   <div class="container">
+    <% if @instruments.nil? %>
+    <% else %>
     <% @instruments.each do |instrument|  %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= instrument.photo %>);">
+      <% if instrument.photo.nil? %>
+        <div class="card">
+      <% else %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');">
+      <% end  %>
           <div class="card-description">
             <h2><%= instrument.title %></h2>
             <p><%= instrument.marque %></p>
             <%= link_to "See ", instrument_path(instrument) %>
           </div>
+
       </div>
     <% end %>
+
   </div>
-  <!-- insert <div class="card"> -->
+    <% end %><!-- insert <div class="card"> -->
 </div>
