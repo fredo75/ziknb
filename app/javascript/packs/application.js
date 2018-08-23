@@ -13,7 +13,13 @@ if (document.getElementById("catch_phrase")){
   hideNavbar();
 
 }
+
+import {selectCategory} from '../component/instrument'
+
+selectCategory()
+
 import {positionMapOnPage} from '../component/map_position'
 if (document.getElementById("map")){
   positionMapOnPage();
 }
+
