@@ -6,6 +6,7 @@ function positionMapOnPage () {
       const map = document.getElementById('map');
       window.requestAnimationFrame(function() {
         map.style.top = `${scrollY - height}px`;
+        console.log(scrollY - height);
       })
     }
   })
