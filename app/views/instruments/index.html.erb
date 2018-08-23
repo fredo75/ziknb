@@ -31,11 +31,13 @@
     <div class="row">
         <% @instruments.each do |instrument|  %>
       <div class="col-xs-6">
-          <div class="card" style="background-image:url('<%= cl_image_path instrument.photo if instrument.photo.present? %>'); background-size: 250px; opacity:0.9;">
+
+          <div class="card" style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 50%),url('<%= cl_image_path instrument.photo if instrument.photo.present? %>'); background-size: 250px; opacity:0.9;">
+              <%= link_to '', instrument_path(instrument), class: "card-link" %>
             <div class="card-description">
-              <%= link_to instrument_path(instrument) do %>
+
               <h2><%= instrument.title %></h2>
-              <%end  %>
+
               <p><%= instrument.marque %></p>
             </div>
           </div>
