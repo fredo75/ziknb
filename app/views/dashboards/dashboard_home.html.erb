@@ -1,13 +1,15 @@
-<div class="container-dashboard" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.7) 50%), url('<%= image_path "duotone.png" %>')">
+<div class="container-dashboard" >
 
   <div class="instrument_en_location">
     <h2 style="margin-left: 20px;">My instruments </h3><hr>
-    <p> Add an Instrument <%= link_to new_instrument_path do %>
+   <p> Add an Instrument <%= link_to new_instrument_path do %>
        <i class="fas fa-plus"></i>
     <% end %></p>
 
       <% @instruments.each do |instrument|  %>
-        <div class="card" style="background-image: url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');">
+      <div class="col-xs-4">
+
+        <div class="card_dashboard" style="background-image: url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');">
           <%= link_to instrument_path(instrument.id), method: :delete, :class => 'delete-link' do %>
            <i class='fas fa-trash-alt'></i>
           <% end %>
@@ -17,6 +19,7 @@
           </div>
           <%= link_to '', instrument_path(instrument.id), class: "card-link" %>
         </div>
+      </div>
       <% end %>
   </div>
 

@@ -1,5 +1,4 @@
 .container-dashboard {
-    display:flex;
     opacity:0.9;
     overflow:hidden;
   }
@@ -11,9 +10,7 @@
   }
 
 .colonne-droite {
-  display: flex;
-  flex-direction: column;
-  flex-grow:2;
+
 }
 
   .historique {
@@ -22,10 +19,13 @@
   }
 
   .instrument_en_location {
+
     background:white;
-    height: 90vh;
-    overflow:scroll;
-    width: 35vw;
+    border-radius : 3px;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.14);
+    height: 45vh;
+    overflow-x:auto;
+    width: 100vw;
     margin: 10px;
     p{
       text-align:right;
@@ -43,6 +43,21 @@
 
       margin-bottom: 5vh;
     }
+  .card_dashboard {
+    float: none;
+  display: inline-block;
+  background-position:center;
+  background: white;
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.14);
+  border-radius : 3px;
+  width: 33vw;
+  height: 150px;
+  background-repeat: no-repeat;
+  position: relative;
+  margin: 10px;
+  background-size: 250px;
+  opacity:0.9;
+  }
 
   .message {
   display: flex;
