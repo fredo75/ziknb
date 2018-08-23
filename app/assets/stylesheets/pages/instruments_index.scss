@@ -60,13 +60,14 @@
 }
 
 .cf{
-    zoom:1;
+    zoom: 1;
+
 }
 
 
 /* Form wrapper styling */
 .form-wrapper {
-    width: 478px;
+    width: 1000px;
     padding: 15px;
     margin: 15px auto 50px auto;
     background: #444;
@@ -80,13 +81,15 @@
 .form-wrapper input {
     width: 330px;
     height: 40px;
-    padding: 10px 5px;
-    float: left;
+    padding: 10px px;
+    float: auto;
     font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
     border: 0;
     background: #eee;
-    border-radius: 3px 0 0 3px;
+    border-radius: 3px 3px 3px 3px;
+
 }
+
 
 .form-wrapper input:focus {
     outline: 1;
@@ -127,6 +130,7 @@
     background: #d83c3c;
     border-radius: 0 3px 3px 0;
     text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+
 }
 
 .form-wrapper button:hover{
