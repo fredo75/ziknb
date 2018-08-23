@@ -1,6 +1,6 @@
 .container-back {
   display: flex;
-  margin: 20px;
+  margin-right: 20px;
 
 }
 
@@ -19,6 +19,7 @@
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  width:auto;
 }
 .banner p {
   font-size: 25px;
@@ -28,31 +29,8 @@
   margin-bottom: 30px;
 }
 
-.card-index {
-  width: auto;
-  background-repeat: no-repeat;
-  background-position:right;
-  color: white;
-  position: relative;
-  text-align:center;
-  margin: 10px;
-}
-
-.card-description {
-  text-align:right;
-  width: 200px;
-  padding: 1em;
-}
-
 .container-map {
-
   width: 400px;
-
-}
-
-.cf:before, .cf:after{
-    content:"";
-    display:table;
 }
 
 .cf:after{
