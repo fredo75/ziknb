@@ -14,10 +14,10 @@ Instrument.destroy_all
 
 puts "create User"
 bidon = User.create(email: "bidon@gmail.com", password: "azerty", address: "12 villa gaudelet, Paris")
-donbi = User.create(email: "donbi@gmail.com", password: "azerty")
-karl = User.create(email: "karl@gmail.com", password: "azerty")
-lea = User.create(email: "lea@gmail.com", password: "azerty")
-miles = User.create(email: "miles@gmail.com", password:'azerty')
+donbi = User.create(email: "donbi@gmail.com", password: "azerty", address: "40 bld malsherbe, Paris")
+karl = User.create(email: "karl@gmail.com", password: "azerty", address: "22 bld des pas perdus, Paris")
+lea = User.create(email: "lea@gmail.com", password: "azerty", address: "40 bld malsherbe, Paris")
+miles = User.create(email: "miles@gmail.com", password:'azerty', address: "40 bld malsherbe, Paris")
 p User.all
 
 puts "create Instruments"
@@ -41,7 +41,7 @@ loc.save!
 
 
 
-guitare.remote_photo_url = "https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?ixlib=rb-0.3.5&s=93a5334e00639f481ac6021361a5ba34&auto=format&fit=crop&w=668&q=80"
+guitare.remote_photo_url = "https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?ixlib=rb-0.3.5&s=93a5334e00639f481ac6021361a5ba34&auto=format&fit=crop&w=668&<q></q>=80"
 guitare.save
 uekulele.remote_photo_url = "https://images.unsplash.com/photo-1505473286910-580cec54a3ed?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=250defea85465f001b7ec0b37f4b358e&auto=format&fit=crop&w=1550&q=80"
 uekulele.save
@@ -71,7 +71,6 @@ drum.save
 # guitare.photo = "ldskmctx7mm2a1ack6ah"
 p Instrument.all
 
-Bidon2 = User.create(email: "bidon2@gmail.com", password: "azerty", address: "12 villa gaudelet, Paris")
 
 loc = Location.create(date: 2, price: 12, delivered: true, user: bidon, instrument: guitare, start_date: "2018-08-22", end_date: "2018-08-24")
 
