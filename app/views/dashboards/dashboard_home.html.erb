@@ -30,7 +30,7 @@
             <h2>rent start: <%= location.start_date %></h2>
             <h2> rent end: <%= location.end_date %> </h2>
           </div>
-        <%= link_to '', instrument_path(location.instrument.id), class: "card-link" %>
+        <%= link_to '', instrument_location_path(location.instrument, location), class: "card-link" %>
         <%= link_to instrument_location_path(location.instrument, location), method: :delete, :class => 'delete-link' do %>
           <i class='fas fa-trash-alt'></i>
           <% end %>
