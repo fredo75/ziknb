@@ -1,40 +1,39 @@
-<div class="container-dashboard" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= image_path "duotone.png" %>');">
-  <div class="instrument_en_location"> <h2 style="margin-left: 30px;">My instruments</h2> <hr>
-    <div class = "button" style="margin-left: 30px;">
-     <%= link_to("create instrument", new_instrument_path, class: "btn btn-success") %>
-    </div>
-  <% @instruments.each do |instrument|  %>
-    <div class="card" style="background-image: url('<%= cl_image_path instrument.photo if instrument.photo.present? %>'); background-size:cover;">
+<div class="container-dashboard">
+
+  <div class="instrument_en_location">
+    <h2 style="margin-left: 20px;">My instruments </h3><hr>
+    <p> Add an Instrument <%= link_to new_instrument_path do %>
+       <i class="fas fa-plus"></i>
+    <% end %></p>
+
+      <% @instruments.each do |instrument|  %>
+        <div class="card" style="background-image: url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');">
           <%= link_to instrument_path(instrument.id), method: :delete, :class => 'delete-link' do %>
            <i class='fas fa-trash-alt'></i>
           <% end %>
-        <div class="card-description">
-          <h2><%= instrument.title %></h2>
-          <p><%= instrument.marque %></p>
+          <div class="card-description">
+            <h2><%= instrument.title %></h2>
+            <p><%= instrument.marque %></p>
+          </div>
+          <%= link_to '', instrument_path(instrument.id), class: "card-link" %>
         </div>
-      <%= link_to '', instrument_path(instrument.id), class: "card-link" %>
-    </div>
-  <% end %>
+      <% end %>
   </div>
 
   <div class="colonne-droite">
-
     <div class="reservation" > <h2 style="margin-left: 30px;"> My bookings </h2>
-    <% @locations.each do |location| %>
-
-
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= location.instrument.photo %>); background-size:cover;">
-          <div class="card-description">
-            <h2><%= location.instrument.title %></h2>
-            <p><%= location.instrument.marque %></p>
-            <h2>rent start: <%= location.start_date %></h2>
-            <h2> rent end: <%= location.end_date %> </h2>
-          </div>
-        <%= link_to '', instrument_path(location.instrument.id), class: "card-link" %>
-        <%= link_to instrument_location_path(location.instrument, location), method: :delete, :class => 'delete-link' do %>
-          <i class='fas fa-trash-alt'></i>
-          <% end %>
-      </div>
+      <% @locations.each do |location| %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= location.instrument.photo %>);">
+            <div class="card-description">
+              <h2><%= location.instrument.title %></h2>
+              <p><%= location.instrument.marque %></p>
+              <h2><%= location.start_date %> - <%= location.end_date %></h2>
+            </div>
+          <%= link_to '', instrument_path(location.instrument.id), class: "card-link" %>
+          <%= link_to instrument_location_path(location.instrument, location), method: :delete, :class => 'delete-link' do %>
+            <i class='fas fa-trash-alt'></i>
+      <% end %>
+    </div>
 
     <%end %>
     </div>
