@@ -24,7 +24,6 @@ class LocationsController < ApplicationController
     else
       render :new
     end
-
   end
 
 
