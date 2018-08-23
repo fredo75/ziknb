@@ -1,5 +1,6 @@
 .container-dashboard {
 
+
   background-image:  linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('duotone.png');
     display:flex;
     opacity:0.9;
@@ -30,10 +31,6 @@
     margin: 10px;
   }
 
-    .btn {
-
-      margin-bottom: 5vh;
-    }
 
     .message {
   display: flex;
@@ -41,3 +38,4 @@
   padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
+

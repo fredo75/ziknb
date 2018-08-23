@@ -10,12 +10,12 @@ class InstrumentsController < ApplicationController
         # infoWindow: { content: render_to_string(partial: "/instruments/map_box", locals: { flat: flat }) }
       }
     end
-     if params[:query].present?
-      @instruments = Instrument.where(title: params[:query])
+    if params[:query].present?
+    @instruments = Instrument.global_search(params[:query])
     else
-      @instruments = Instrument.all
+    @instruments = Instrument.all
     end
-     authorize @instruments
+    authorize @instruments
   end
 
   def show
@@ -35,6 +35,7 @@ class InstrumentsController < ApplicationController
     @instrument = Instrument.new
     authorize @instrument
     @instruments = Instrument.where.not(latitude: nil, longitude: nil)
+    @user = current_user
     @markers = @instruments.map do |instrument|
       {
         lat: instrument.latitude,
