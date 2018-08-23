@@ -1,21 +1,27 @@
 <!-- <h1>Instruments#index</h1>
 <p>Find me in app/views/instruments/index.html.erb</p>
  -->
-<div id="banner" class="banner-instrument" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.7) 50%), url('<%= image_path "duotone.png" %>');">
-  <div class="banner-content">
-    <div class="form-inline " >
-      <%= form_tag instruments_path, method: :get do %>
-      <%= text_field_tag :query,
-         params[:query],
-         class:"form-control",
-         id: "flat_address",
-          placeholder: "find an instrument"
-      %>
-        <%= button_tag class: "form-control" do %>
-          <%= icon('fa', 'search') %>
+
+<div class="banner-instrument" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.7) 50%), url('<%= image_path "duotone.png" %>')">
+      <div class="form-wrapper cf">
+      <!-- <div class="form-inline " > -->
+        <%= form_tag instruments_path, method: :get do %>
+        <%= text_field_tag :query,
+           params[:query],
+           class:"form-control input",
+           # id: "flat_address",
+            placeholder: "find an instrument"
+        %>
+          <%= button_tag class: "form-control button" do %>
+            <%= icon('fa', 'search') %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+              <!-- <input type="text" placeholder="Search here..." required>
+              <button type="submit">Search</button> -->
+      <!-- </div> -->
+  <div class="banner-content">
+
   </div>
 </div>
 

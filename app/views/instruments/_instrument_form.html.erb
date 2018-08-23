@@ -7,7 +7,12 @@
         <%= f.input :title %>
         <%= f.input :marque %>
         <%= f.input :category %>
-        <%= f.input :address %>
+        <%= text_field_tag :query,
+         params[:query],
+         class:"form-control",
+         id: "flat_address",
+          placeholder: "adress"
+      %>
         <%= f.input :description %>
         <%= f.button :submit, class: "btn btn-success"%>
         <%= f.input :photo %>
