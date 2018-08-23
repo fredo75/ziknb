@@ -1,22 +1,19 @@
 .card {
   background-position:center;
   overflow:hidden;
-  display:block;
   background: #FFFFFF;
   box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.14);
   border-radius : 3px;
-  width: 45vw;
+  width: 30vw;
   height: 150px;
   background-repeat: no-repeat;
   color: grey;
   position: relative;
-  text-align:center;
   margin: 10px;
 }
 .card-description {
   text-align:right;
-  width: 40vw;
-  padding: 1px;
+  padding-right: 40px;
 }
 .card-description h2 {
   font-size: 18px;
