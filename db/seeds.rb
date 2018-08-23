@@ -23,17 +23,17 @@ p User.all
 puts "create Instruments"
 
 
-guitare = Instrument.create(title: "guitare", description: "super guitare des années 80", marque: "Les Paul 1987", address: "20 avenue de belleville, paris", user: bidon)
-uekulele = Instrument.create(title: "ukulélé", description: "petit ukulélé début de gamme pour débutant", address: "20 avenue des champs elysees, paris",  marque: "Kala", user: bidon )
-drum = Instrument.create(title: "homemade drum", description: "Waiting for you to make everyone dance", marque: "Tama", address:"115 rue Lafayette, paris", user: karl )
-guitare_1 = Instrument.create(title: "guitare", description:"guitare stratocaster",  marque: "Fender", address: "10 rue oberkampf, paris", user: bidon)
+guitare = Instrument.create(title: "Guitare", description: "super guitare des années 80", marque: "Les Paul 1987", address: "20 avenue de belleville, paris", user: bidon)
+uekulele = Instrument.create(title: "Ukulélé", description: "petit ukulélé début de gamme pour débutant", address: "20 avenue des champs elysees, paris",  marque: "Kala", user: bidon )
+drum = Instrument.create(title: "Homemade drum", description: "Waiting for you to make everyone dance", marque: "Tama", address:"115 rue Lafayette, paris", user: karl )
+guitare_1 = Instrument.create(title: "Guitare", description:"guitare stratocaster",  marque: "Fender", address: "10 rue oberkampf, paris", user: bidon)
 saxophone = Instrument.create(title: "Pro saxophone", description: "great alto ", marque: "Selmer", address: "13 rue Charles Friedel, paris", user: miles)
-guitare_2 = Instrument.create(title: "guitare", description:"guitare Telecaster",  marque: "Fender", address: "15 villa gaudelet, paris",  user: donbi)
+guitare_2 = Instrument.create(title: "Guitare", description:"guitare Telecaster",  marque: "Fender", address: "15 villa gaudelet, paris",  user: donbi)
 cellow = Instrument.create(title: "Great Stradivarius", description: "great 60years old cellow", marque: "Stradivarius", address: "327 rue st-martin", user:lea)
-guitare_3 = Instrument.create(title: "guitare folk", description:"guitare acoustique",  marque: "Takamine", address: "20 avenue de menillmontant, paris", user: donbi)
-guitare_4 = Instrument.create(title: "guitare classique", description:"guitare classique pro",  marque: "Takamine", address: "20 rue verte, paris", user: donbi)
-banjo = Instrument.create(title: "custom banjo", description: "Cripple Creek banjo", marque: "Gold Tone", address: "9 rue de charone, paris", user: bidon)
-
+guitare_3 = Instrument.create(title: "Guitare folk", description:"guitare acoustique",  marque: "Takamine", address: "20 avenue de menillmontant, paris", user: donbi)
+guitare_4 = Instrument.create(title: "Guitare classique", description:"guitare classique pro",  marque: "Takamine", address: "20 rue verte, paris", user: donbi)
+banjo = Instrument.create(title: "Custom banjo", description: "Cripple Creek banjo", marque: "Gold Tone", address: "9 rue de charone, paris", user: bidon)
+trumpet = Instrument.create(title: "Trumpet", description: "Beginner's trumpet", marque: "Woodbrass", address: "18 rue du faubourg poissonière, paris", user: karl)
 
 
 loc = Location.new(date: 1522, price: 220, delivered: true, user: bidon, instrument: guitare)
@@ -55,6 +55,8 @@ cellow.remote_photo_url = "https://images.unsplash.com/photo-1492563817904-5f1dc
 cellow.save
 guitare_3.remote_photo_url = "https://images.unsplash.com/photo-1457960784918-ea479c62a2c5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5c8592eda66df40f7ad15d8b4cce2e30&auto=format&fit=crop&w=750&q=80"
 guitare_3.save
+trumpet.remote_photo_url = "https://images.unsplash.com/photo-1520614233149-f698fd8379e4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67c7351c3062d715b823be3442e6131d&auto=format&fit=crop&w=1732&q=80"
+trumpet.save
 guitare_4.remote_photo_url = "https://images.unsplash.com/photo-1465225314224-587cd83d322b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b30ae759059ac8e7562ad32f1c7417ee&auto=format&fit=crop&w=1350&q=80"
 guitare_4.save
 banjo.remote_photo_url = "https://images.unsplash.com/photo-1482443462550-d2c99314ab6a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d99dbfa934a0f05dce23f04ac67885f0&auto=format&fit=crop&w=1502&q=80"
