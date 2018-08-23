@@ -16,3 +16,7 @@ if (document.getElementById("catch_phrase")){
 
 }
 
+
+import {selectCategory} from '../component/instrument'
+
+selectCategory()

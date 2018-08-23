@@ -13,7 +13,7 @@ Instrument.destroy_all
 
 
 puts "create User"
-bidon = User.create(email: "bidon@gmail.com", password: "azerty")
+bidon = User.create(email: "bidon@gmail.com", password: "azerty", address: "12 villa gaudelet, Paris")
 donbi = User.create(email: "donbi@gmail.com", password: "azerty")
 p User.all
 
@@ -53,7 +53,7 @@ guitare_4.save
 # guitare.photo = "ldskmctx7mm2a1ack6ah"
 p Instrument.all
 
-
+Bidon2 = User.create(email: "bidon2@gmail.com", password: "azerty", address: "12 villa gaudelet, Paris")
 
 loc = Location.create(date: 2, price: 12, delivered: true, user: bidon, instrument: guitare, start_date: "2018-08-22", end_date: "2018-08-24")
 

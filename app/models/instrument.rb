@@ -5,9 +5,8 @@ class Instrument < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
 
-CATEGORIES = ["Instruments à vent", "Instruments à corde", "percurssion", "autres categories d'instrument"]
-
-
+  BRANDS = ["Gibson", "Harman professionnal", "Shure", "Yamaha", "Fender", "Steinway", "Sennheiser", "Roland", "other brands"]
+  CATEGORIES = ["chords", "wind", "drum", "other"].freeze
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
