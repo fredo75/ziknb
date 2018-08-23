@@ -42,6 +42,7 @@ class InstrumentsController < ApplicationController
     @instrument = Instrument.new
     authorize @instrument
     @instruments = Instrument.where.not(latitude: nil, longitude: nil)
+    @user = current_user
     @markers = @instruments.map do |instrument|
       {
         lat: instrument.latitude,
