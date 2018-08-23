@@ -5,6 +5,7 @@
     <h2> Add an instrument</h1>
       <%= simple_form_for @instrument do |f| %>
 
+
         <%= f.input :title, label: false, placeholder: 'Title' %>
         <%= f.input :marque, include_blank: false, collection: Instrument::BRANDS, label: false %>
 
@@ -20,11 +21,14 @@
         <%= f.input :category, :as => :hidden, label: false %>
 
         <hr>
+
         <%= text_field_tag :query,
          params[:query],
          class:"form-control",
          id: "flat_address",
           placeholder: "address" %>
+          placeholder: "adress"
+      %>
 
         <%= f.input :description %>
         <%= f.input :photo %>
