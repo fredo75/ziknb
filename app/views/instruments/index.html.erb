@@ -1,6 +1,7 @@
 <!-- <h1>Instruments#index</h1>
 <p>Find me in app/views/instruments/index.html.erb</p>
  -->
+
 <div class="banner-instrument" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.7) 50%), url('<%= image_path "duotone.png" %>')">
       <div class="form-wrapper cf form-group">
       <!-- <div class="form-inline " > -->
@@ -42,17 +43,18 @@
 <div class="container-back">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-4">
         <% @instruments.each do |instrument|  %>
-          <div class="card-index card-description" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');">
+      <div class="col-xs-6">
+          <div class="card" style="background-image:url('<%= cl_image_path instrument.photo if instrument.photo.present? %>'); background-size: 250px; opacity:0.9;">
             <div class="card-description">
+              <%= link_to instrument_path(instrument) do %>
               <h2><%= instrument.title %></h2>
+              <%end  %>
               <p><%= instrument.marque %></p>
-              <%= link_to "See ", instrument_path(instrument) %>
             </div>
           </div>
-        <% end %>
       </div>
+        <% end %>
     </div>
   </div>
         <!-- insert <div class="card"> -->

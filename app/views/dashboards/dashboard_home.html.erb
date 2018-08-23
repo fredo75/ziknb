@@ -4,7 +4,7 @@
      <%= link_to("create instrument", new_instrument_path, class: "btn btn-success") %>
     </div>
   <% @instruments.each do |instrument|  %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path instrument.photo if instrument.photo.present? %>'); background-size:cover;">
+    <div class="card" style="background-image: url('<%= cl_image_path instrument.photo if instrument.photo.present? %>'); background-size:cover;">
           <%= link_to instrument_path(instrument.id), method: :delete, :class => 'delete-link' do %>
            <i class='fas fa-trash-alt'></i>
           <% end %>
@@ -22,7 +22,12 @@
     <div class="reservation" > <h2 style="margin-left: 30px;"> My bookings </h2>
     <% @locations.each do |location| %>
 
+<<<<<<< HEAD
+      <div class="card" style="background-image: url(<%= location.instrument.photo %>); backround-size:cover;">
+
+=======
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= location.instrument.photo %>); background-size:cover;">
+>>>>>>> master
           <div class="card-description">
             <h2><%= location.instrument.title %></h2>
             <p><%= location.instrument.marque %></p>
