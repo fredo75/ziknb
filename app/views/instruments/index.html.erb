@@ -1,18 +1,32 @@
 <!-- <h1>Instruments#index</h1>
 <p>Find me in app/views/instruments/index.html.erb</p>
  -->
-
 <div id="banner" class="banner-instrument" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.7) 50%), url('<%= image_path "duotone.png" %>')">
+
       <div class="form-wrapper cf">
       <!-- <div class="form-inline " > -->
-        <%= form_tag instruments_path, method: :get do %>
-        <%= text_field_tag :query,
-           params[:query],
+        <%= form_tag instruments_path, method: :get, :class => "form-inline" do %>
+        <%= text_field_tag :type,
+           params[:type],
            class:"form-control input",
            # id: "flat_address",
-            placeholder: "find an instrument"
+            placeholder: "find your instrument"
         %>
-          <%= button_tag class: "form-control button" do %>
+
+        <%= text_field_tag :where,
+           params[:where],
+           class:"form-control input where",
+           id: "flat_address",
+            placeholder: "Where ?"
+        %>
+
+        <%= text_field_tag :when,
+           params[:when],
+           class:"form-control input when datepicker-home",
+           # id: "flat_address",
+            placeholder: "When ?"
+        %>
+          <%= button_tag class: "button" do %>
             <%= icon('fa', 'search') %>
           <% end %>
         <% end %>
