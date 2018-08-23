@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :instruments
   has_many :locations
 
-  mount_uploader :photo, PhotoUploader
+  # mount_uploader :photo, PhotoUploader
 end
