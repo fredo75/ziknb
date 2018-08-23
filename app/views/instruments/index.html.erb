@@ -22,10 +22,9 @@
 
 <div class="container-back">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
+
         <% @instruments.each do |instrument|  %>
-          <div class="card-index card-description" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');">
+          <div class="card" style="background-image:url('<%= cl_image_path instrument.photo if instrument.photo.present? %>'); background-size: 250px">
             <div class="card-description">
               <h2><%= instrument.title %></h2>
               <p><%= instrument.marque %></p>
@@ -33,8 +32,7 @@
             </div>
           </div>
         <% end %>
-      </div>
-    </div>
+
   </div>
         <!-- insert <div class="card"> -->
   <div class="container-map">
