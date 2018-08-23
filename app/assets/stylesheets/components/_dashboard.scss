@@ -1,6 +1,7 @@
 .container-dashboard {
     display:flex;
     opacity:0.9;
+    overflow:hidden;
   }
 
   .reservation {
@@ -13,7 +14,6 @@
   display: flex;
   flex-direction: column;
   flex-grow:2;
-
 }
 
   .historique {
@@ -23,7 +23,8 @@
 
   .instrument_en_location {
     background:white;
-    height: auto;
+    height: 90vh;
+    overflow:scroll;
     width: 35vw;
     margin: 10px;
     p{
@@ -32,13 +33,12 @@
     }
     h2 {
       text-align:center;
-
     }
   }
-h2 {
-    font-family:'Montserrat';
 
-}
+  h2 {
+    font-family:'Montserrat';
+  }
     .btn {
 
       margin-bottom: 5vh;
