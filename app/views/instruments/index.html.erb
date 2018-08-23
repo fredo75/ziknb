@@ -27,9 +27,10 @@
       <div class="col-xs-6">
           <div class="card" style="background-image:url('<%= cl_image_path instrument.photo if instrument.photo.present? %>'); background-size: 250px; opacity:0.9;">
             <div class="card-description">
+              <%= link_to instrument_path(instrument) do %>
               <h2><%= instrument.title %></h2>
+              <%end  %>
               <p><%= instrument.marque %></p>
-              <%= link_to "See ", instrument_path(instrument) %>
             </div>
           </div>
       </div>
