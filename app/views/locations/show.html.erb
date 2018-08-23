@@ -1,13 +1,22 @@
-<div class="container">
+<div class="container container-instrument" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('<%= image_path "duotone2.png" %>');">
+
+    <div class="card" style="background-image: url('<%= cl_image_path @location.instrument.photo if @location.instrument.photo.present? %>'); background-size:cover;">
+    </div>
+
   <div class="row">
+
     <div class='col-sm-6 col-sm-offset-3'>
-      <h1> Details of your location </h1>
+      <h2> Details of your location </h2>
         <p><strong>FROM:  </strong> <%= @location.start_date %></p>
 
         <p><strong>TO:  </strong><%= @location.end_date %></p>
         <p><strong>Your instrument:  </strong><%= @location.instrument.title %></p>
 
+    </div>
+  </div>
 
-<%= link_to "Back to dashboard", dashboards_path %>
+  <div class = "button" style="margin-left: 30px;">
+     <%= link_to("Back to dashboard", dashboards_path, class: "btn btn-success") %>
+  </div>
 </div>
 

@@ -23,17 +23,17 @@ p User.all
 puts "create Instruments"
 
 
-guitare = Instrument.create(title: "Guitare", description: "super guitare des années 80", marque: "Les Paul 1987", address: "20 avenue de belleville, paris", user: bidon)
-uekulele = Instrument.create(title: "Ukulélé", description: "petit ukulélé début de gamme pour débutant", address: "20 avenue des champs elysees, paris",  marque: "Kala", user: bidon )
-drum = Instrument.create(title: "Homemade drum", description: "Waiting for you to make everyone dance", marque: "Tama", address:"115 rue Lafayette, paris", user: karl )
-guitare_1 = Instrument.create(title: "Guitare", description:"guitare stratocaster",  marque: "Fender", address: "10 rue oberkampf, paris", user: bidon)
-saxophone = Instrument.create(title: "Pro saxophone", description: "great alto ", marque: "Selmer", address: "13 rue Charles Friedel, paris", user: miles)
-guitare_2 = Instrument.create(title: "Guitare", description:"guitare Telecaster",  marque: "Fender", address: "15 villa gaudelet, paris",  user: donbi)
-cellow = Instrument.create(title: "Great Stradivarius", description: "great 60years old cellow", marque: "Stradivarius", address: "327 rue st-martin", user:lea)
-guitare_3 = Instrument.create(title: "Guitare folk", description:"guitare acoustique",  marque: "Takamine", address: "20 avenue de menillmontant, paris", user: donbi)
-guitare_4 = Instrument.create(title: "Guitare classique", description:"guitare classique pro",  marque: "Takamine", address: "20 rue verte, paris", user: donbi)
+guitare = Instrument.create(title: "Guitare", description: "super guitare des années 80", marque: "Les Paul 1987", address: "20 avenue de belleville, paris", user: bidon, present: true)
+uekulele = Instrument.create(title: "Ukulélé", description: "petit ukulélé début de gamme pour débutant", address: "20 avenue des champs elysees, paris",  marque: "Kala", user: bidon, present: true )
+drum = Instrument.create(title: "Homemade drum", description: "Waiting for you to make everyone dance", marque: "Tama", address:"115 rue Lafayette, paris", user: karl, present: true )
+guitare_1 = Instrument.create(title: "Guitare", description:"guitare stratocaster",  marque: "Fender", address: "10 rue oberkampf, paris", user: bidon, present: true)
+saxophone = Instrument.create(title: "Pro saxophone", description: "great alto ", marque: "Selmer", address: "13 rue Charles Friedel, paris", user: miles, present: true)
+guitare_2 = Instrument.create(title: "Guitare", description:"guitare Telecaster",  marque: "Fender", address: "15 villa gaudelet, paris",  user: donbi, present: false)
+cellow = Instrument.create(title: "Great Stradivarius", description: "great 60years old cellow", marque: "Stradivarius", address: "327 rue st-martin, montrouge", user:lea, present: false)
+guitare_3 = Instrument.create(title: "Guitare folk", description:"guitare acoustique",  marque: "Takamine", address: "20 avenue de menillmontant, paris", user: donbi, present: true)
+guitare_4 = Instrument.create(title: "Guitare classique", description:"guitare classique pro",  marque: "Takamine", address: "20 rue verte, paris", user: donbi, present: false)
 banjo = Instrument.create(title: "Custom banjo", description: "Cripple Creek banjo", marque: "Gold Tone", address: "9 rue de charone, paris", user: bidon)
-trumpet = Instrument.create(title: "Trumpet", description: "Beginner's trumpet", marque: "Woodbrass", address: "18 rue du faubourg poissonière, paris", user: karl)
+trumpet = Instrument.create(title: "Trumpet", description: "Beginner's trumpet", marque: "Woodbrass", address: "18 rue du faubourg poissonière, paris", user: karl, present: true)
 
 
 loc = Location.new(date: 1522, price: 220, delivered: true, user: bidon, instrument: guitare)
