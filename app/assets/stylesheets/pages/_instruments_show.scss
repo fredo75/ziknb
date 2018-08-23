@@ -1,6 +1,5 @@
 .container-instrument{
 
-
   height: 100vh !important;
   color: white;
 
@@ -13,4 +12,11 @@
 
 .container {
   justify-content:text-align;
+  position: relative;
+}
+
+.date-picker {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }

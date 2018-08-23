@@ -20,15 +20,22 @@ class InstrumentsController < ApplicationController
 
   def show
     @instrument = Instrument.find(params[:id])
+    @location = Location.new
     authorize @instrument
-
-
+    @rentings = Location.where(instrument_id: @instrument.id)
+    @renting_dates = @rentings.map do |renting|
+      {
+        from: renting.start_date,
+        to: renting.end_date
+      }
+    end
   end
 
   def new
     @instrument = Instrument.new
     authorize @instrument
     @instruments = Instrument.where.not(latitude: nil, longitude: nil)
+    @user = current_user
     @markers = @instruments.map do |instrument|
       {
         lat: instrument.latitude,
@@ -56,6 +63,7 @@ class InstrumentsController < ApplicationController
 
   def update
     authorize @instrument
+
   end
 
   def edit
