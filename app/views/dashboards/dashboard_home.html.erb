@@ -14,7 +14,7 @@
            <i class='fas fa-trash-alt'></i>
           <% end %>
           <%= link_to edit_instrument_path(instrument.id), :class => 'edit-link' do %>
-           <i class="fas fa-pen"></i>
+           <i class="fas fa-pencil-alt"></i>
           <% end %>
           <div class="card-description">
             <h2><%= instrument.title %></h2>
@@ -36,21 +36,17 @@
               <p><%= location.instrument.marque %></p>
             </div>
             <h2 id="booked"> BOOKED </br> from <%= location.start_date %> to </br> <%= location.end_date %></h2>
-              <%= link_to '', instrument_path(location.instrument.id), class: "card-link" %>
-              <%= link_to instrument_location_path(location.instrument, location), method: :delete, :class => 'delete-link' do %>
-            <i class='fas fa-trash-alt'></i>
-          <% end %>
+              <%= link_to '', instrument_location_path(location.instrument, location), class: "card-link" %>
         </div>
       <%end %>
     </div>
   </div>
 
 
-    <div class="range"> <h2 style="margin-left: 30px;"> History</h2>
+    <div class="range">
+      <p class="add"> History </p>
     </div>
 
 </div>
 
 <%= render "instruments/instrument_form"  %>
-
-

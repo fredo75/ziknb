@@ -1,9 +1,4 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.5) 50%), url('<%= image_path "duotone.png" %>')">
-  <% if user_signed_in? %>
-    <%= link_to "Rent now !", instruments_path, class: 'btn btn-success'  %>
-<% else  %>
-<%= link_to "Rent now !", new_user_registration_path, class: 'btn btn-success' %>
-  <% end %>
   <div class="banner-content">
     <h1>Zick'n'b</h1>
   <svg> <path style="stroke: #ffffff; stroke-width:10px; stroke-linecap: round; fill:none;" d="M10, 10, L50, 100, L90, 50"></path>
@@ -11,5 +6,10 @@
 
     <p id="catch_phrase">Rent instruments & share musical experiences</p>
   </div>
+  <% if user_signed_in? %>
+    <%= link_to "Start !", instruments_path, class: 'btn-medium color'  %>
+<% else  %>
+<%= link_to "Start !", new_user_registration_path, class: 'btn-medium color' %>
+  <% end %>
 
 

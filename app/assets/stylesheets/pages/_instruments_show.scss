@@ -1,6 +1,6 @@
 .btn{
   text-align: center;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .container {
@@ -12,4 +12,29 @@
   position: absolute;
   top: 0px;
   right: 0px;
+  padding: 50px;
+}
+.form-inline{
+  margin: 25px;
+}
+
+
+.flatpickr-calendar.inline {
+  top: 9px !important;
+}
+
+.flatpickr-input[readonly] {
+  width: 100%;
+}
+
+.form-inline{
+  display: flex;
+  align-items: center;
+}
+
+.new {
+
+  background-size: 250px;
+  opacity:0.9;margin-top: 6vh;
+
 }

@@ -7,7 +7,6 @@
   display: flex;
   justify-content: space-between;
   align-items:center;
-
 }
 
 .selected {
@@ -36,3 +35,9 @@ margin-bottom: 5vh;
   color: black;
 
   }
+.color {
+  color:lightgrey;
+  border-color: lightgrey;
+  font-size:30px;
+  border-width: 2px;
+}
