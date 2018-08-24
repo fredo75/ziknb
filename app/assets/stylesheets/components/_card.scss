@@ -52,9 +52,17 @@
 //   font-size: 5px;
 // }
 .delete-link {
-  position: relative;
+  position: absolute;
   top:2px;
-  left:150px;
+  left:10px;
   z-index: 3;
+  font-color:white;
+}
+
+.edit-link {
+  position: absolute;
+  top:30px;
+  left:10px;
+  z-index: 4;
   font-color:white;
 }

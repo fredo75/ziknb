@@ -2,7 +2,6 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-    <h2> Add an instrument</h1>
       <%= simple_form_for @instrument do |f| %>
 
 
@@ -22,7 +21,7 @@
 
 
         <hr>
-        <%= f.input :address, input_html: {value: @user.address + "blabla"}, label: 'Mon address', class:"form-control", id: "flat_address" %>
+        <%= f.input :address, input_html: {value: @instrument.user.address + "blabla"}, label: 'Mon address', class:"form-control", id: "flat_address" %>
 
         <!-- c est du ruby text_field_tag :query,
           params[:query],
