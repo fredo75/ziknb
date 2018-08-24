@@ -2,8 +2,8 @@
 
   <div class="range">
     <div class="row">
-        <p class="add"> Add an Instrument <%= link_to new_instrument_path do %>
-          <i class="fas fa-plus"></i>
+        <p class="add"> My Instruments to rent <%= link_to new_instrument_path do %>
+          <i class="fas fa-plus" style="margin-left:30vw;"></i>
         <% end %></p>
       <% @instruments.each do |instrument|  %>
         <div class="card_dashboard" style="background-image: url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');">
