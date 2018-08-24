@@ -23,17 +23,17 @@ p User.all
 puts "create Instruments"
 
 
-guitare = Instrument.create(title: "Guitare", description: "super guitare des années 80", marque: "Les Paul 1987", address: "20 avenue de belleville, paris", user: bidon, present: true)
-uekulele = Instrument.create(title: "Ukulélé", description: "petit ukulélé début de gamme pour débutant", address: "20 avenue des champs elysees, paris",  marque: "Kala", user: bidon, present: true )
-drum = Instrument.create(title: "Homemade drum", description: "Waiting for you to make everyone dance", marque: "Tama", address:"115 rue Lafayette, paris", user: karl, present: true )
-guitare_1 = Instrument.create(title: "Guitare", description:"guitare stratocaster",  marque: "Fender", address: "10 rue oberkampf, paris", user: bidon, present: true)
-saxophone = Instrument.create(title: "Pro saxophone", description: "great alto ", marque: "Selmer", address: "13 rue Charles Friedel, paris", user: miles, present: true)
-guitare_2 = Instrument.create(title: "Guitare", description:"guitare Telecaster",  marque: "Fender", address: "15 villa gaudelet, paris",  user: donbi, present: false)
-cellow = Instrument.create(title: "Great Stradivarius", description: "great 60years old cellow", marque: "Stradivarius", address: "327 rue st-martin, montrouge", user:lea, present: false)
-guitare_3 = Instrument.create(title: "Guitare folk", description:"guitare acoustique",  marque: "Takamine", address: "20 avenue de menillmontant, paris", user: donbi, present: true)
-guitare_4 = Instrument.create(title: "Guitare classique", description:"guitare classique pro",  marque: "Takamine", address: "20 rue verte, paris", user: donbi, present: false)
-banjo = Instrument.create(title: "Custom banjo", description: "Cripple Creek banjo", marque: "Gold Tone", address: "9 rue de charone, paris", user: bidon)
-trumpet = Instrument.create(title: "Trumpet", description: "Beginner's trumpet", marque: "Woodbrass", address: "18 rue du faubourg poissonière, paris", user: karl, present: true)
+guitare = Instrument.create(title: "Guitare", description: "super guitare des années 80", marque: "Les Paul 1987", address: "20 avenue de belleville, paris", user: bidon, present: true, price: 50)
+uekulele = Instrument.create(title: "Ukulélé", description: "petit ukulélé début de gamme pour débutant", address: "20 avenue des champs elysees, paris",  marque: "Kala", user: bidon, present: true, price: 70)
+drum = Instrument.create(title: "Homemade drum", description: "Waiting for you to make everyone dance", marque: "Tama", address:"115 rue Lafayette, paris", user: karl, present: true, price: 75)
+guitare_1 = Instrument.create(title: "Guitare", description:"guitare stratocaster",  marque: "Fender", address: "10 rue oberkampf, paris", user: bidon, present: true, price: 55)
+saxophone = Instrument.create(title: "Pro saxophone", description: "great alto ", marque: "Selmer", address: "13 rue Charles Friedel, paris", user: miles, present: true, price: 100)
+guitare_2 = Instrument.create(title: "Guitare", description:"guitare Telecaster",  marque: "Fender", address: "15 villa gaudelet, paris",  user: donbi, present: false, price: 55)
+cello = Instrument.create(title: "Great Stradivarius", description: "great 60-year-old cello", marque: "Stradivarius", address: "327 rue st-martin, montrouge", user:lea, present: false, price: 120)
+guitare_3 = Instrument.create(title: "Guitare folk", description:"guitare acoustique",  marque: "Takamine", address: "20 avenue de menillmontant, paris", user: donbi, present: true, price: 80)
+guitare_4 = Instrument.create(title: "Guitare classique", description:"guitare classique pro",  marque: "Takamine", address: "20 rue verte, paris", user: donbi, present: false, price: 90)
+banjo = Instrument.create(title: "Custom banjo", description: "Cripple Creek banjo", marque: "Gold Tone", address: "9 rue de charone, paris", user: bidon, price: 45)
+trumpet = Instrument.create(title: "Trumpet", description: "Beginner's trumpet", marque: "Woodbrass", address: "18 rue du faubourg poissonière, paris", user: karl, present: true, price: 120)
 
 
 loc = Location.new(date: 1522, price: 220, delivered: true, user: bidon, instrument: guitare)
@@ -51,8 +51,8 @@ saxophone.remote_photo_url = "https://images.unsplash.com/photo-1499314722718-08
 saxophone.save
 guitare_2.remote_photo_url = "https://images.unsplash.com/photo-1519087409225-c6c6f7fd0aee?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c55ec38c8c2e7ad8f5c238acea33bf1c&auto=format&fit=crop&w=1350&q=80"
 guitare_2.save
-cellow.remote_photo_url = "https://images.unsplash.com/photo-1492563817904-5f1dc687974f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b8ac3aa5e7a1c44e1b9f2580e889edc9&auto=format&fit=crop&w=668&q=80"
-cellow.save
+cello.remote_photo_url = "https://images.unsplash.com/photo-1492563817904-5f1dc687974f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b8ac3aa5e7a1c44e1b9f2580e889edc9&auto=format&fit=crop&w=668&q=80"
+cello.save
 guitare_3.remote_photo_url = "https://images.unsplash.com/photo-1457960784918-ea479c62a2c5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5c8592eda66df40f7ad15d8b4cce2e30&auto=format&fit=crop&w=750&q=80"
 guitare_3.save
 trumpet.remote_photo_url = "https://images.unsplash.com/photo-1520614233149-f698fd8379e4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67c7351c3062d715b823be3442e6131d&auto=format&fit=crop&w=1732&q=80"
