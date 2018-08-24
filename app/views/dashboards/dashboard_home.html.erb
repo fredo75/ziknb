@@ -2,9 +2,12 @@
 
   <div class="range">
     <div class="row">
-        <p class="add"> My Instruments to rent <%= link_to new_instrument_path do %>
-          <i class="fas fa-plus" style="margin-left:30vw;"></i>
-        <% end %></p>
+        <!-- <p class="add"> My Instruments to rent <%#= link_to new_instrument_path do %> -->
+          <!-- <i class="fas fa-plus" style="margin-left:30vw;"></i> -->
+        <!-- <%# end %></p> -->
+        <p class="add"> My Instruments to rent
+          <i class="fas fa-plus" style="margin-left:30vw;" data-toggle="modal" data-target="#exampleModal"></i>
+        </p>
       <% @instruments.each do |instrument|  %>
         <div class="card_dashboard" style="background-image: url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');">
           <%= link_to instrument_path(instrument.id), method: :delete, :class => 'delete-link' do %>
@@ -48,6 +51,6 @@
 
 </div>
 
-
+<%= render "instruments/instrument_form"  %>
 
 
