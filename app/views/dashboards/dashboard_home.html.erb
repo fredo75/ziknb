@@ -33,7 +33,7 @@
               <p><%= location.instrument.marque %></p>
             </div>
             <h2 id="booked"> BOOKED </br> from <%= location.start_date %> to </br> <%= location.end_date %></h2>
-              <%= link_to '', instrument_path(location.instrument.id), class: "card-link" %>
+              <%= link_to '', instrument_location_path(location.instrument, location), class: "card-link" %>
               <%= link_to instrument_location_path(location.instrument, location), method: :delete, :class => 'delete-link' do %>
             <i class='fas fa-trash-alt'></i>
           <% end %>
