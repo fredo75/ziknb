@@ -1,22 +1,25 @@
-<div class="container container-instrument" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('<%= image_path "duotone2.png" %>');">
+<div class="container-instru" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url('<%= image_path "duotone2.png" %>');">
 
-    <div class="card" style="background-image: url('<%= cl_image_path @location.instrument.photo if @location.instrument.photo.present? %>'); background-size:cover;">
+
+    <div class="loc">
+      <div class="card" style="background-image: url('<%= cl_image_path @location.instrument.photo if @location.instrument.photo.present? %>'); background-size:cover;">
+      </div>
+      <div class="box">
+          <h2> Details of your location </h2>
+            <p><strong>FROM:  </strong> <%= @location.start_date %></p>
+            <p><strong>TO:  </strong><%= @location.end_date %></p>
+            <p><strong>Rented instrument:  </strong><%= @location.instrument.title %></p>
+      </div>
+      <div class="but">
+        <div class = "button" style="margin-left: 30px;">
+           <%= link_to("Back to dashboard", dashboards_path, class: "btn-medium") %>
+        </div>
+        <div class="bin">
+                <div class = "button" style="margin-left: 30px;">
+                  <%= link_to("Cancel the booking", instrument_location_path(@location.instrument, @location), method: :delete, class: "btn-medium") %>
+                </div>
+        </div>
+      </div>
     </div>
-
-  <div class="row">
-
-    <div class='col-sm-6 col-sm-offset-3'>
-      <h2> Details of your location </h2>
-        <p><strong>FROM:  </strong> <%= @location.start_date %></p>
-
-        <p><strong>TO:  </strong><%= @location.end_date %></p>
-        <p><strong>Your instrument:  </strong><%= @location.instrument.title %></p>
-
-    </div>
-  </div>
-
-  <div class = "button" style="margin-left: 30px;">
-     <%= link_to("Back to dashboard", dashboards_path, class: "btn btn-success") %>
-  </div>
 </div>
 
