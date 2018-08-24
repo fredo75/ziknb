@@ -1,4 +1,5 @@
 class InstrumentsController < ApplicationController
+  before_action :set_intrument, only: [:show, :edit, :update, :destroy]
   def index
     @instruments = policy_scope(Instrument)
     @instruments = Instrument.where.not(latitude: nil, longitude: nil)
@@ -32,9 +33,7 @@ class InstrumentsController < ApplicationController
   end
 
   def show
-    @instrument = Instrument.find(params[:id])
     @location = Location.new
-    authorize @instrument
     @rentings = Location.where(instrument_id: @instrument.id)
     @renting_dates = @rentings.map do |renting|
       {
@@ -75,17 +74,14 @@ class InstrumentsController < ApplicationController
   end
 
   def update
-    authorize @instrument
 
   end
 
   def edit
-    authorize @instrument
+
   end
 
   def destroy
-    @instrument = Instrument.find(params[:id])
-    authorize @instrument
     if @instrument.locations.empty?
       @instrument.destroy
       flash[:notice] = 'Instrument successfully destroyed'
@@ -99,6 +95,11 @@ class InstrumentsController < ApplicationController
 
   def instruments_params
     params.require(:instrument).permit(:title, :description, :marque, :photo, :category, :address, :latitude, :longitude )
+  end
+
+  def set_intrument
+    @instrument = Instrument.find(params[:id])
+    authorize @instrument
   end
 
 end
