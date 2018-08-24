@@ -1,0 +1,20 @@
+
+.container-instru {
+display: flex;
+flex-direction: column;
+text-align: center;
+align-items:center;
+height: 100vh;
+justify-content: center;
+}
+
+.box {
+  text-align: left;
+}
+
+.but {
+  display:flex;
+  align-items:center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
