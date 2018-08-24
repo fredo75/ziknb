@@ -1,9 +1,7 @@
 class LocationsController < ApplicationController
-
+before_action :set_location, only: [:show, :days]
   def show
-    @location = Location.find(params[:id])
-    authorize @location
-
+    days
   end
 
   def new
@@ -34,10 +32,18 @@ class LocationsController < ApplicationController
     redirect_to dashboards_path
   end
 
+  def days
+    @number = (@location.end_date - @location.start_date + 1).to_i
+  end
 
   private
   def location_params
     params.require(:location).permit(:start_date, :end_date, :id, :instrument_id, :date)
+  end
+
+  def set_location
+    @location = Location.find(params[:id])
+    authorize @location
   end
 
 end
