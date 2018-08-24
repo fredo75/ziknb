@@ -1,23 +1,5 @@
-<div class="container container-instrument" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('<%= image_path "duotone.png" %>');">
+<div class="container " >
       <%= render 'locations/form', location: @location, class:"date-picker" %>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4" id="photo">
-      <%= image_tag 'guitare_folk.jpg', :class => "card card-user card-category card-description"%>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-      <h1><%= @instrument.title %></h1>
-      <p><%= @instrument.description %></p>
-      <p><%= @instrument.marque %></p>
-    </div>
-
-
-  <div class="row">
-    <p>
-      <%=link_to 'book', new_instrument_location_path(@instrument.id), class:"btn btn-success" %>
-    </p>
-  </div>
 </div>
 
 
