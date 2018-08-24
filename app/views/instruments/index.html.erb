@@ -46,8 +46,8 @@
         <% @instruments.each do |instrument|  %>
       <div class="col-xs-6">
 
-          <div class="card" style="background-image:url('<%= cl_image_path instrument.photo if instrument.photo.present? %>'); ">
-              <%= link_to '', instrument_path(instrument), class: "card-link" %>
+          <div class="card" style="background-image:url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');" data-toggle="modal" data-target="#Modal-<%= instrument.id %>">
+              <%#= link_to '', instrument_path(instrument), class: "card-link " %>
             <div class="card-description">
 
               <h2><%= instrument.title %></h2>
@@ -56,6 +56,7 @@
               <p><%= instrument.price %>€/jour</p>
             </div>
           </div>
+          <%= render 'locations/form', location: @location, instrument: instrument, id: instrument.id, class:"date-picker" %>
       </div>
         <% end %>
     </div>
