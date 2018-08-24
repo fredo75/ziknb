@@ -1,29 +1,43 @@
 
-<div class="container">
 
-  <div class="col-xs-6 col-sm-6 col-sm-offset-1">
-    <div class="card" style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 50%),url('<%= cl_image_path @instrument.photo if @instrument.photo.present? %>'); background-size: 250px; opacity:0.9;margin-top: 25vh;">
-      <div class="card-description">
-      <!-- insert <div class="card"> -->
-        <h1><%= @instrument.title %></h1>
-        <p><%= @instrument.description %></p>
-        <p><%= @instrument.marque %></p>
+  <div class="row" >
+    <div class="col-xs-12" align="center">
+      <div class="card new" style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 50%),url('<%= cl_image_path @instrument.photo if @instrument.photo.present? %>');">
+        <div class="card-description">
+        <!-- insert <div class="card"> -->
+          <h2><%= @instrument.title %></h2>
+          <p><%= @instrument.description %></p>
+          <p><%= @instrument.marque %></p>
+        </div>
       </div>
     </div>
   </div>
+
+
+
+
+<div class="row" >
+  <div class="col-xs-12">
   <%= simple_form_for([@instrument, @location]) do |l| %>
-  <div class='col-sm-4 '>
-    <div class="form-inline" data-inline="true">
-      <%= l.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= l.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <div class="action">
-      <%= l.submit  "book ", class: "btn btn-primary " %>
-      </div>
-    </div>
-  </div>
-  <% end %>
-</div>
 
+      <div class="form-inline" >
+        <div class="col-md-5 col-xs-12">
+        <%= l.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        </div>
+        <div class="col-md-5 col-xs-12">
+          <%= l.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          </div>
+          <div class="col-md-2 col-xs-12">
+        <%= l.submit  "book ", class: " btn-medium " %>
+      </div>
+
+
+      </div>
+
+
+  <% end %>
+  </div>
+  </div>
 
 
 
