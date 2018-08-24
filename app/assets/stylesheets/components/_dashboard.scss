@@ -6,6 +6,7 @@
   .range {
     // border-style: solid none;
     // border-color:white;
+    background-color:#cdd5e0 ;
     border-radius : 3px;
     box-shadow: 2px 2px 2px 2px rgba(125,125,125,0.9);
     height: 35vh;
@@ -75,4 +76,21 @@ color:black;
   color:white;
   font-size: 15px;
 }
+
+#plus {
+  color:white;
+}
+
+.fa-trash-alt {
+  color:white;
+  padding-left:10px;
+  opacity:1;
+}
+
+.fa-trash-alt :hover {
+  color:black;
+  opacity: 0.6;
+}
+
+
 

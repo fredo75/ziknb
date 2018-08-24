@@ -1,9 +1,9 @@
-<div class="container-dashboard" >
+<div class="container-dashboard">
 
   <div class="range">
     <div class="row">
         <p class="add"> My Instruments to rent <%= link_to new_instrument_path do %>
-          <i class="fas fa-plus" style="margin-left:30vw;"></i>
+          <i id="plus" class="fas fa-plus" style="margin-left:30vw;">Add an instrument</i>
         <% end %></p>
       <% @instruments.each do |instrument|  %>
         <div class="card_dashboard" style="background-image: url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');">
@@ -16,6 +16,7 @@
           <div class="card-description">
             <h2><%= instrument.title %></h2>
             <p><%= instrument.marque %></p>
+            <p><%= instrument.price %>€/jour</p>
           </div>
           <%= link_to '', instrument_path(instrument.id), class: "card-link" %>
         </div>
@@ -34,8 +35,8 @@
             </div>
             <h2 id="booked"> BOOKED </br> from <%= location.start_date %> to </br> <%= location.end_date %></h2>
               <%= link_to '', instrument_path(location.instrument.id), class: "card-link" %>
-              <%= link_to instrument_location_path(location.instrument, location), method: :delete, :class => 'delete-link' do %>
-            <i class='fas fa-trash-alt'></i>
+             <!--  <%= link_to instrument_location_path(location.instrument, location), method: :delete, :class => 'delete-link' do %>
+            <i class='fas fa-trash-alt'></i> -->
           <% end %>
         </div>
       <%end %>
@@ -43,7 +44,8 @@
   </div>
 
 
-    <div class="range"> <h2 style="margin-left: 30px;"> History</h2>
+    <div class="range">
+      <p class="add"> History </p>
     </div>
 
 </div>
