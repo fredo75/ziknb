@@ -23,6 +23,3 @@ if (document.getElementById("map")){
   positionMapOnPage();
 }
 
-import {selectAddress} from '../component/instrument'
-
-selectAddress()
