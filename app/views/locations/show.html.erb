@@ -4,10 +4,16 @@
     <div class="loc">
       <div class="card" style="background-image: url('<%= cl_image_path @location.instrument.photo if @location.instrument.photo.present? %>'); background-size:cover;">
       </div>
+
+
+
       <div class="box">
-          <h2> Details of your location </h2>
+          <h2> Details of your booking</h2>
             <p><strong>FROM:  </strong> <%= @location.start_date %></p>
             <p><strong>TO:  </strong><%= @location.end_date %></p>
+            <div class="days">
+              <p>(Number of days of the booking: <strong><%= pluralize @number, "day" %></strong>) </p>
+            </div>
             <p><strong>Rented instrument:  </strong><%= @location.instrument.title %></p>
       </div>
       <div class="but">
@@ -15,9 +21,9 @@
            <%= link_to("Back to dashboard", dashboards_path, class: "btn-medium") %>
         </div>
         <div class="bin">
-                <div class = "button" style="margin-left: 30px;">
-                  <%= link_to("Cancel the booking", instrument_location_path(@location.instrument, @location), method: :delete, class: "btn-medium") %>
-                </div>
+          <div class = "button" style="margin-left: 30px;">
+            <%= link_to("Cancel the booking", instrument_location_path(@location.instrument, @location), method: :delete, class: "btn-medium") %>
+          </div>
         </div>
       </div>
     </div>
