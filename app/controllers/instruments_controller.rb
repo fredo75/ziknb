@@ -1,6 +1,7 @@
 class InstrumentsController < ApplicationController
   before_action :set_intrument, only: [:show, :edit, :update, :destroy]
   def index
+    @location = Location.new
     @instruments = policy_scope(Instrument)
     @instruments = Instrument.where.not(latitude: nil, longitude: nil)
     if params[:type].present?
@@ -63,6 +64,7 @@ class InstrumentsController < ApplicationController
   def create
     @instrument = Instrument.new(instruments_params)
     @instrument.user = current_user
+    @instrument.address = current_user.address
     @instrument.save!
     if @instrument.save
       redirect_to instruments_path
@@ -94,7 +96,7 @@ class InstrumentsController < ApplicationController
   private
 
   def instruments_params
-    params.require(:instrument).permit(:title, :description, :marque, :photo, :category, :address, :latitude, :longitude )
+    params.require(:instrument).permit(:title, :description, :marque, :photo, :category, :address, :latitude, :longitude, :price )
   end
 
   def set_intrument

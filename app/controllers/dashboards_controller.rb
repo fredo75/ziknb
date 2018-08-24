@@ -5,5 +5,6 @@ class DashboardsController < ApplicationController
     authorize @user
     @locations = @user.locations
     @instruments = @user.instruments
+    @instrument = Instrument.new
   end
 end
