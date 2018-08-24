@@ -1,13 +1,13 @@
 <div class="container-dashboard" >
 
   <div class="instrument_en_location">
-    <h2 style="margin-left: 20px;">My instruments </h3><hr>
-   <p> Add an Instrument <%= link_to new_instrument_path do %>
+   <!--  <h2 style="margin-left: 20px;">My instruments </h3><hr> -->
+      <div class="row">
+<p> Add an Instrument <%= link_to new_instrument_path do %>
        <i class="fas fa-plus"></i>
     <% end %></p>
 
       <% @instruments.each do |instrument|  %>
-      <div class="col-xs-4">
 
         <div class="card_dashboard" style="background-image: url('<%= cl_image_path instrument.photo if instrument.photo.present? %>');">
           <%= link_to instrument_path(instrument.id), method: :delete, :class => 'delete-link' do %>
@@ -19,11 +19,12 @@
           </div>
           <%= link_to '', instrument_path(instrument.id), class: "card-link" %>
         </div>
-      </div>
+
       <% end %>
+      </div>
   </div>
 
-  <div class="colonne-droite">
+  <div class="reservation">
 
       <% @locations.each do |location| %>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= location.instrument.photo %>);">
@@ -39,13 +40,13 @@
     </div>
     <%end %>
     </div>
+</div>
 
 
     <div class="historique"> <h2 style="margin-left: 30px;"> History</h2>
     </div>
   </div>
 
-</div>
 
 
 
